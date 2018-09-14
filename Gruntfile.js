@@ -7,8 +7,7 @@ module.exports = function (grunt) {
 
     sass: {
       options: {
-        sourceMap: true,
-        includePaths: ['node_modules/bootstrap/scss/bootstrap.scss', 'node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss']
+        sourceMap: true
       },
 
       dist: {
@@ -41,19 +40,20 @@ module.exports = function (grunt) {
     // },
 
     copy: {
-      // scripts: {
-      //   expand: true,
-      //   cwd: 'node_modules/bootstrap/dist/js/',
-      //   src: '**',
-      //   flatten: 'true',
-      //   dest: 'js/vendor/'
-      // },
+      slickfonts: {
+        expand: true,
+        cwd: 'node_modules/slick-carousel/slick/',
+        src: ['fonts/**','ajax-loader.gif'],
+        flatten: 'true',
+        dest: 'fonts/slickfonts'
+      },
 
       iconfonts: {
         expand: true,
         cwd: 'node_modules/@fortawesome/fontawesome-free/webfonts',
         // src: ['**', '!**/less/**', '!**/css/**', '!package.json'],
         src: ['*.woff', '*.woff2'],
+        flatten: 'true',
         dest: 'fonts/'
       },
 
@@ -76,7 +76,9 @@ module.exports = function (grunt) {
 
     concat: {
       options: {
-        separator: ';',
+        stripBanners: true,
+        banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
+        '<%= grunt.template.today("yyyy-mm-dd") %> */',
       },
       dist: {
         src: [
@@ -88,11 +90,12 @@ module.exports = function (grunt) {
           // Other Js core
           'source/js/modernizr.custom.js',
           'node_modules/slick-carousel/slick/slick.min.js',
-          'node_modules/waypoints/src/waypoint.js',
-          'jscustom/classie.js',
+          'node_modules/waypoints/lib/jquery.waypoints.min.js',
+          'node_modules/desandro-classie/classie.js',
+          'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js',
 
           // Include your own custom scripts (located in the custom folder)
-          'jscustom/custom.js'
+          'source/js/custom.js'
 
         ],
         // Finally, concatinate all the files above into one single file
@@ -117,14 +120,14 @@ module.exports = function (grunt) {
       grunt: { files: ['Gruntfile.js'] },
 
       sass: {
-        files: 'scss/**/*.scss',
+        files: 'source/scss/**/*.scss',
         tasks: ['sass'],
         options: {
           livereload: true,
         }
       },
       js: {
-        files: 'js/**/*.js',
+        files: 'source/js/**/*.js',
         tasks: ['concat', 'uglify'],
         options: {
           livereload: true,
