@@ -1,0 +1,68 @@
+[data-wy] {
+    visibility: hidden;
+    animation-name: none;
+    &.wy-anim {
+        visibility: visible;
+        -webkit-animation-duration: 0.8s;
+        animation-duration: 0.8s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        -webkit-animation-name: fadeInSm;
+        animation-name: fadeInSm;
+        &.wy-dwn {
+            -webkit-animation-name: fadeInBm;
+            animation-name: fadeInBm;
+        }
+
+        &.wy-lft {
+            -webkit-animation-name: fadeInRs;
+            animation-name: fadeInRs;
+        }
+
+        &.wy-rht {
+            -webkit-animation-name: fadeInLs;
+            animation-name: fadeInLs;
+        }
+
+        &.wy-zom {
+            -webkit-animation-name: boomIn;
+            animation-name: boomIn;
+            -webkit-animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+    }
+}
+
+$show-numbers: true;
+
+@if $show-numbers {
+    @for $i from 1 through 12 {
+        [data-wy='#{$i}'] {
+            animation-delay: ($i * 0.075s);
+        }
+    }
+}
+
+@-webkit-keyframes boomIn {
+    from {
+        opacity: 0;
+        -webkit-transform: scale3d(0.3, 0.3, 0.3) rotate(90deg);
+        transform: scale3d(0.3, 0.3, 0.3) rotate(90deg);
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes boomIn {
+    from {
+        opacity: 0;
+        -webkit-transform: scale3d(0.3, 0.3, 0.3) rotate(90deg);
+        transform: scale3d(0.3, 0.3, 0.3) rotate(90deg);
+    }
+
+    50% {
+        opacity: 1;
+    }
+}

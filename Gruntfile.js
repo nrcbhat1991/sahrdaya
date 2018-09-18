@@ -93,6 +93,7 @@ module.exports = function (grunt) {
           'node_modules/waypoints/lib/jquery.waypoints.min.js',
           'node_modules/desandro-classie/classie.js',
           'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js',
+          'node_modules/plyr/dist/plyr.min.js',
 
           // Include your own custom scripts (located in the custom folder)
           'source/js/custom.js'

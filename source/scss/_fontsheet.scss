@@ -1,0 +1,90 @@
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/webfont/Lato-Bold.woff2') format('woff2'),
+        url('../fonts/webfont/Lato-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/webfont/Lato-Light.woff2') format('woff2'),
+        url('../fonts/webfont/Lato-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/webfont/Lato-Regular.woff2') format('woff2'),
+        url('../fonts/webfont/Lato-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/webfont/Lato-Black.woff2') format('woff2'),
+        url('../fonts/webfont/Lato-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Roboto Condensed';
+    src: url('../fonts/webfont/RobotoCondensed-Regular.woff2') format('woff2'),
+        url('../fonts/webfont/RobotoCondensed-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Titillium Web';
+    src: url('../fonts/webfont/TitilliumWeb-SemiBold.woff2') format('woff2'),
+        url('../fonts/webfont/TitilliumWeb-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Titillium Web';
+    src: url('../fonts/webfont/TitilliumWeb-Regular.woff2') format('woff2'),
+        url('../fonts/webfont/TitilliumWeb-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Titillium Web';
+    src: url('../fonts/webfont/TitilliumWeb-Bold.woff2') format('woff2'),
+        url('../fonts/webfont/TitilliumWeb-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Titillium Web';
+    src: url('../fonts/webfont/TitilliumWeb-Light.woff2') format('woff2'),
+        url('../fonts/webfont/TitilliumWeb-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/webfont/Montserrat-Regular.woff2') format('woff2'),
+        url('../fonts/webfont/Montserrat-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/webfont/Montserrat-Light.woff2') format('woff2'),
+        url('../fonts/webfont/Montserrat-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+$lato: 'Lato';
+$roboc: 'Roboto Condensed';
+$titi: 'Titillium Web';
+$mont: 'Montserrat';

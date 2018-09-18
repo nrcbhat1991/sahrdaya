@@ -1,0 +1,171 @@
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    -webkit-transition: all .4s;
+    -moz-transition: all .4s;
+    -o-transition: all .4s;
+    transition: all .4s;
+
+    &:hover,
+    &:focus,
+    &:active {
+        text-decoration: none;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+    padding: 0;
+    margin: 0;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.clearfixer {
+    display: block;
+    float: none !important;
+    clear: both;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+
+html {
+    -webkit-overflow-scrolling: touch;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    min-height: 100vh;
+}
+
+body {
+    min-height: 100vh;
+}
+
+html.scroll-disabled body {
+    height: 100vh;
+    overflow: hidden;
+}
+
+body {
+    font-family: 'nunito';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1rem;
+    color: #000;
+    line-height: 1.375rem;
+    background: #fff;
+    background-size: cover;
+    overflow-x: hidden !important;
+    -webkit-font-smoothing: antialiased;
+    margin: 0 !important;
+    position: relative;
+}
+
+img {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+button {
+    border: 0;
+    border-style: none;
+    outline: 0;
+    cursor: pointer;
+    -webkit-transition: all .4s;
+    -moz-transition: all .4s;
+    -o-transition: all .4s;
+    transition: all .4s;
+}
+
+button:focus {
+    outline: 0;
+}
+
+label {
+    font-weight: normal;
+    margin-bottom: 0;
+}
+
+input {
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    outline: none;
+}
+
+textarea {
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    outline: none;
+    resize: none;
+}
+
+.img-wrp {
+    overflow: hidden;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+.slick-slider * {
+    outline: none !important;
+}
+
+.tab-content > .tab-pane,
+.pill-content > .pill-pane {
+    display: block;
+    height: 0;
+    overflow: hidden;
+}
+
+.tab-content > .active,
+.pill-content > .active {
+    height: auto;
+}
+
+.form-control {
+    display: initial;
+    line-height: initial;
+    color: initial;
+    background-color: initial;
+    background-image: initial;
+    border: none;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: initial;
+    -o-transition: initial;
+    transition: initial;
+    background: none;
+}
+
+.loadz {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url(../images/loaderz.gif) center no-repeat #fff;
+}

@@ -1,7 +1,7 @@
 <?php include 'header.php';?>
 
 <section class="bnr-wrp wy-dwn" data-wy>
-    <div id="carouselExampleControls" class="carousel slide carousel-fade" data-ride="carousel">
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="bnr-actions">
             <button class="playpause-btn" data-play="on">
                 <div class="playpause"></div>
@@ -22,8 +22,8 @@
                     <div class="container">
                         <h1>SAHRDAYA <em>Institute of Management Studies</em></h1>
                         <h3>We promote character, <em>the rest follows...</em></h3>
-                        <a href="javascript:void(0)">More About Sahrdaya
-                            <?php echo file_get_contents("images/rightarrow.svg"); ?></a>
+                        <a class="knowmore-btn" href="javascript:void(0)">More About Sahrdaya <img src="images/rightarrow.svg"
+                                alt="rightarrow"></a>
                     </div>
                 </div>
             </div>
@@ -35,6 +35,8 @@
                     <div class="container">
                         <h1>SAHRDAYA <em>Institute of Management Studies</em></h1>
                         <h3>We promote character, <em>the rest follows...</em></h3>
+                        <a class="knowmore-btn" href="javascript:void(0)">More About Sahrdaya <img src="images/rightarrow.svg"
+                                alt="rightarrow"></a>
                     </div>
                 </div>
             </div>
@@ -46,34 +48,67 @@
                     <div class="container">
                         <h1>SAHRDAYA <em>Institute of Management Studies</em></h1>
                         <h3>We promote character, <em>the rest follows...</em></h3>
+                        <a class="knowmore-btn" href="javascript:void(0)">More About Sahrdaya <img src="images/rightarrow.svg"
+                                alt="rightarrow"></a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <div class="quicklinks-mn">
+        <a class="quicklinks-bx" href="javascript:void(0)" style="background-image: url(images/quicklink01.jpg)">
+            <span><img src="images/education01.svg"></span>
+            <h4>Academic</h4>
+        </a>
+        <a class="quicklinks-bx" href="javascript:void(0)" style="background-image: url(images/quicklink02.jpg)">
+            <span><img src="images/education02.svg"></span>
+            <h4>Admission</h4>
+        </a>
+        <a class="quicklinks-bx" href="javascript:void(0)" style="background-image: url(images/quicklink03.jpg)">
+            <span><img src="images/education05.svg"></span>
+            <h4>People</h4>
+        </a>
+        <a class="quicklinks-bx" href="javascript:void(0)" style="background-image: url(images/quicklink04.jpg)">
+            <span><img src="images/education04.svg"></span>
+            <h4>How To Apply</h4>
+        </a>
+    </div>
 </section>
-<section class="pgabt-wrp">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6 col-md-5">
-                <div class="pgabt-img wy-rht" data-wy>
-                    <img src="images/about01.jpg">
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-7">
-                <h1 data-wy="1"><em>Sahrdaya</em> Institute of Management Studies</h1>
-                <p data-wy="2">College of Advanced Studies, and Sahrdaya-tech, the three major educational and career
-                    building ventures of IDET, have already achieved a respectable and enviable place in the national
-                    and regional education scenario. SIMS is a rising star in the horizon of quality education erected
-                    on the rich tradition of the Catholic educational system nestled in Central Kerala. SIMS is a value
-                    integrated management education centre facilitated by a community of committed promoters for whom
-                    education is dedication.</p>
-                <a class="mn-btn" data-wy="3" href="javascript:void(0)">Know More <i class="fas fa-long-arrow-alt-right"></i></a>
+<!-- <div class="hexagon-mn">
+    <div class="hexagon-bx">
+        <div class="hexagon-inr">
+            <div class="hexagon-block">
+                <img width="300%" src="images/about01.jpg">
             </div>
         </div>
     </div>
+</div> -->
+<section class="pgabt-wrp">
+    <div class="pgabt-mn">
+        <a class="pgabt-knw knowmore-bx" href="javascript:void(0)" data-wy style="background-image: url(images/about01.jpg)">
+            <div class="pgabtknw-det">
+                <h4>Sahrdaya</h4>
+                <span class="knowmore-btn">Know More <img src="images/rightarrow.svg"></span>
+            </div>
+        </a>
+        <div class="pgabt-det">
+            <h2 class="mn-h2" data-wy="1">About Us</h2>
+            <p data-wy="2">Sahrdaya Institute of Management Studies (SIMS) is a significant milestone in the
+                committed journey of Irinjalakuda Diocesan Education Trust (IDET), chaired by Bishop of
+                Irinjalakuda, Mar Pauly Kannookadan. SIMS is affiliated to the University of Calicut, approved by
+                the All India Council for Technical Education (AICTE) and recognized by the Government of Kerala.
+                Sahrdaya College of Engineering and Technology, Sahrdaya College of Advanced Studies, and
+                Sahrdaya-tech, the three major educational and career building ventures of IDET, have already
+                achieved a respectable and enviable place in the national and regional education scenario. SIMS is
+                a rising star in the horizon of quality education erected on the rich tradition of the Catholic
+                educational system nestled in Central Kerala. SIMS is a value integrated management education
+                centre facilitated by a community of committed promoters for whom education is dedication. Here the
+                young minds of tomorrow will bloom out and take wings with a secular-spiritual outlook steeped in
+                values and ethos.</p>
+        </div>
+    </div>
 </section>
-<section class="whysims-wrp">
+<!-- <section class="whysims-wrp">
     <div class="container">
         <div class="row">
             <div class="col-md-6">
@@ -125,49 +160,88 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 <section class="pgcampus-wrp">
-    <div class="pgcampus-vdo wy-rht" data-wy>
-        <a href="javascript:void(0)">
-            <div class="pgcampusvdo-img img-wrp"><img src="images/campus-video.jpg"></div>
-            <div class="pgcampvdo-det">
-                <h4 data-wy="2">Watch <strong>Campus</strong> Life 360O Video Tour</h4>
-                <p data-wy="4">Take a look around the campus and see what we have to offer</p>
-            </div>
-        </a>
-    </div>
     <div class="pgcampus-cont">
-        <div class="pgcampusdet-bx wy-lft" data-wy>
-            <div class="pgcampus-img">
-                <div class="pgcampusinr-img img-wrp">
+        <h2 data-wy="2">Why SIMS</h2>
+        <div class="pgcampusdet-mn wy-lft" data-wy>
+            <div class="pgcampusdet-bx">
+                <div class="pgcampus-img img-wrp">
                     <img src="images/campuslife01.jpg">
                 </div>
-            </div>
-            <div class="pgcampus-det">
-                <h4 data-wy="2"><strong>Campus</strong> Life</h4>
-                <p data-wy="3">College of Advanced Studies, and Sahrdaya-tech, the three major educational and career
-                    building. College of Advanced Studies, and Sahrdaya-tech, the three major educational and career
-                    building</p>
-                <a data-wy="4" href="javascript:void(0)">MORE INFO <i class="fas fa-long-arrow-alt-right"></i></a>
-            </div>
-        </div>
-        <div class="pgcampusdet-bx wy-lft" data-wy>
-            <div class="pgcampus-img">
-                <div class="pgcampusinr-img img-wrp">
-                    <img src="images/campuslife02.jpg">
+                <div class="pgcampus-det">
+                    <h4>Fold Medalist</h4>
                 </div>
             </div>
-            <div class="pgcampus-det">
-                <h4 data-wy="2"><strong>Discover</strong> Us</h4>
-                <p data-wy="3">College of Advanced Studies, and Sahrdaya-tech, the three major educational and career
-                    building. College of Advanced Studies, and Sahrdaya-tech, the three major educational and career
-                    building</p>
-                <a data-wy="4" href="javascript:void(0)">MORE INFO <i class="fas fa-long-arrow-alt-right"></i></a>
+            <div class="pgcampusdet-bx">
+                <div class="pgcampus-img img-wrp">
+                    <img src="images/campuslife02.jpg">
+                </div>
+                <div class="pgcampus-det">
+                    <h4>FDP From IIM - A</h4>
+                </div>
+            </div>
+            <div class="pgcampusdet-bx">
+                <div class="pgcampus-img img-wrp">
+                    <img src="images/campuslife03.jpg">
+                </div>
+                <div class="pgcampus-det">
+                    <h4>Ph.D From IIM - A</h4>
+                </div>
+            </div>
+            <div class="pgcampusdet-bx">
+                <div class="pgcampus-img img-wrp">
+                    <img src="images/campuslife04.jpg">
+                </div>
+                <div class="pgcampus-det">
+                    <h4>Library</h4>
+                </div>
+            </div>
+            <div class="pgcampusdet-bx">
+                <div class="pgcampus-img img-wrp">
+                    <img src="images/campuslife05.jpg">
+                </div>
+                <div class="pgcampus-det">
+                    <h4>Pick & Drop</h4>
+                </div>
+            </div>
+            <div class="pgcampusdet-bx">
+                <div class="pgcampus-img img-wrp">
+                    <img src="images/campuslife06.jpg">
+                </div>
+                <div class="pgcampus-det">
+                    <h4>Gymnasium</h4>
+                </div>
             </div>
         </div>
     </div>
+    <div class="pgcampus-vdo wy-rht" data-wy>
+        <div class="pgcampusvdo-img img-wrp"><img src="images/campus-video.jpg"></div>
+        <!-- <div class="plyr__video-embed" id="player"> -->
+        <!-- <iframe src="https://www.youtube.com/embed/bTqVqk7FSmY?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1" allowfullscreen allowtransparency allow="autoplay"></iframe> -->
+        <video id="showreel" class="landscape" poster="images/video.jpg" playsinline loop preload="metadata">
+            <source src="images/video.mp4" type="video/mp4">Your browser does not support videos</video>
+        <!-- </div> -->
+    </div>
 </section>
-<section class="pgaccdemic-wrp">
+<section class="quickies-wrp">
+    <div class="container">
+        <h4>Quick Links <i class="fas fa-angle-right"></i></h4>
+        <ul class="quickies-ul">
+            <li>Transportation</li>
+            <li>Hostels</li>
+            <li>Library</li>
+            <li>Canteen</li>
+            <li>Study Huts</li>
+            <li>Green Campus</li>
+            <li>Boardroom</li>
+            <li>Library</li>
+            <li>Canteen</li>
+            <li>Study Huts</li>
+        </ul>
+    </div>
+</section>
+<!-- <section class="pgaccdemic-wrp">
     <div class="container">
         <h3 class="mn-h3" data-wy>ACADEMICS</h3>
         <div class="pgaccdemic-sldr" data-wy>
@@ -228,8 +302,8 @@
             </figure>
         </div>
     </div>
-</section>
-<section class="pgelegbly-wrp">
+</section> -->
+<!-- <section class="pgelegbly-wrp">
     <div class="container">
         <h3 data-wy="1" class="mn-h3 mnwhyt-h3">Eligibility for admission</h3>
         <p data-wy="2">Candidates seeking admission to the MBA degree course should have passed any degree of the
@@ -242,85 +316,86 @@
             relaxation as per University rules.</p>
         <a data-wy="3" href="javascript:void(0)">Online Application</a>
     </div>
-</section>
+</section> -->
 <section class="pgnews-wrp">
     <div class="container">
-        <div class="row">
-            <div class="col-md-4 col-lg-3">
-                <div class="pgnews-det">
-                    <h3 data-wy="1" class="mn-h3">News Events</h3>
-                    <p data-wy="2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                        ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in</p>
-                    <h6 data-wy="3"><button class="btn-prev"><svg class="flickity-button-icon" viewBox="0 0 100 100">
-                                <path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow"></path>
-                            </svg></button><button class="btn-nxt"><svg class="flickity-button-icon" viewBox="0 0 100 100">
-                                <path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow" transform="translate(100, 100) rotate(180) "></path>
-                            </svg></button></h6>
+        <div class="pgnews-det">
+            <h3 class="mn-h3">News Events<span></span></h3>
+        </div>
+        <div class="pgnews-sldr" data-wy>
+            <figure class="pgnews-bx">
+                <a class="wy-zom" data-wy="4" href="javascript:void(0)">+</a>
+                <div class="pgnews-img">
+                    <div class="pgnewsimg-inr img-wrp">
+                        <img src="images/news01.jpg">
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-8 col-lg-9">
-                <div class="pgnews-sldr wy-lft" data-wy>
-                    <figure class="pgnews-bx">
-                        <a class="wy-zom" data-wy="4" href="javascript:void(0)">+</a>
-                        <div class="pgnews-img">
-                            <div class="pgnewsimg-inr img-wrp">
-                                <img src="images/news01.jpg">
-                            </div>
-                        </div>
-                        <figcaption>
-                            <h4 data-wy="1">Lorem ipsum dolor sit amet consectetur adipisicing</h4>
-                            <time data-wy="2" datetime="2008-02-14 20:00"><i class="far fa-calendar-alt"></i> Date:
-                                Thu, 19 Feb 2017</time>
-                            <p data-wy="3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut</p>
-                        </figcaption>
-                    </figure>
-                    <figure class="pgnews-bx pgnews-noimg">
-                        <a class="wy-zom" data-wy="4" href="javascript:void(0)">+</a>
-                        <figcaption>
-                            <h4 data-wy="1">Lorem ipsum dolor sit amet onsectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut' labore et dolore magna</h4>
-                            <time data-wy="2" datetime="2008-02-14 20:00"><i class="far fa-calendar-alt"></i> Date:
-                                Thu, 19 Feb 2017</time>
-                            <p data-wy="3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                                nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                                irure dolor in</p>
-                        </figcaption>
-                    </figure>
-                    <figure class="pgnews-bx">
-                        <a class="wy-zom" data-wy="4" href="javascript:void(0)">+</a>
-                        <div class="pgnews-img">
-                            <div class="pgnewsimg-inr img-wrp">
-                                <img src="images/news01.jpg">
-                            </div>
-                        </div>
-                        <figcaption>
-                            <h4 data-wy="1">Lorem ipsum dolor sit amet consectetur adipisicing</h4>
-                            <time data-wy="2" datetime="2008-02-14 20:00"><i class="far fa-calendar-alt"></i> Date:
-                                Thu, 19 Feb 2017</time>
-                            <p data-wy="3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut</p>
-                        </figcaption>
-                    </figure>
-                    <figure class="pgnews-bx">
-                        <a class="wy-zom" data-wy="4" href="javascript:void(0)">+</a>
-                        <div class="pgnews-img">
-                            <div class="pgnewsimg-inr img-wrp">
-                                <img src="images/news01.jpg">
-                            </div>
-                        </div>
-                        <figcaption>
-                            <h4 data-wy="1">Lorem ipsum dolor sit amet consectetur adipisicing</h4>
-                            <time data-wy="2" datetime="2008-02-14 20:00"><i class="far fa-calendar-alt"></i> Date:
-                                Thu, 19 Feb 2017</time>
-                            <p data-wy="3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut</p>
-                        </figcaption>
-                    </figure>
+                <figcaption>
+                    <h4 data-wy="1">Lorem ipsum dolor sit amet consectetur adipisicing</h4>
+                    <time data-wy="2" datetime="2008-02-14 20:00"><i class="far fa-calendar-alt"></i> Date:
+                        Thu, 19 Feb 2017</time>
+                    <p data-wy="3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut</p>
+                </figcaption>
+            </figure>
+            <figure class="pgnews-bx pgnews-noimg">
+                <a class="wy-zom" data-wy="4" href="javascript:void(0)">+</a>
+                <figcaption>
+                    <h4 data-wy="1">Lorem ipsum dolor sit amet onsectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut' labore et dolore magna</h4>
+                    <time data-wy="2" datetime="2008-02-14 20:00"><i class="far fa-calendar-alt"></i> Date:
+                        Thu, 19 Feb 2017</time>
+                    <p data-wy="3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                        irure dolor in</p>
+                </figcaption>
+            </figure>
+            <figure class="pgnews-bx">
+                <a class="wy-zom" data-wy="4" href="javascript:void(0)">+</a>
+                <div class="pgnews-img">
+                    <div class="pgnewsimg-inr img-wrp">
+                        <img src="images/news01.jpg">
+                    </div>
                 </div>
-            </div>
+                <figcaption>
+                    <h4 data-wy="1">Lorem ipsum dolor sit amet consectetur adipisicing</h4>
+                    <time data-wy="2" datetime="2008-02-14 20:00"><i class="far fa-calendar-alt"></i> Date:
+                        Thu, 19 Feb 2017</time>
+                    <p data-wy="3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut</p>
+                </figcaption>
+            </figure>
+            <figure class="pgnews-bx">
+                <a class="wy-zom" data-wy="4" href="javascript:void(0)">+</a>
+                <div class="pgnews-img">
+                    <div class="pgnewsimg-inr img-wrp">
+                        <img src="images/news01.jpg">
+                    </div>
+                </div>
+                <figcaption>
+                    <h4 data-wy="1">Lorem ipsum dolor sit amet consectetur adipisicing</h4>
+                    <time data-wy="2" datetime="2008-02-14 20:00"><i class="far fa-calendar-alt"></i> Date:
+                        Thu, 19 Feb 2017</time>
+                    <p data-wy="3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut</p>
+                </figcaption>
+            </figure>
+            <figure class="pgnews-bx">
+                <a class="wy-zom" data-wy="4" href="javascript:void(0)">+</a>
+                <div class="pgnews-img">
+                    <div class="pgnewsimg-inr img-wrp">
+                        <img src="images/news01.jpg">
+                    </div>
+                </div>
+                <figcaption>
+                    <h4 data-wy="1">Lorem ipsum dolor sit amet consectetur adipisicing</h4>
+                    <time data-wy="2" datetime="2008-02-14 20:00"><i class="far fa-calendar-alt"></i> Date:
+                        Thu, 19 Feb 2017</time>
+                    <p data-wy="3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut</p>
+                </figcaption>
+            </figure>
         </div>
     </div>
 </section>

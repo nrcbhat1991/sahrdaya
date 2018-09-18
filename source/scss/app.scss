@@ -1,0 +1,761 @@
+/*#region------------ Import External Css Start ------------*/
+@import "fontsheet";
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/regular.scss";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "../../node_modules/slick-carousel/slick/slick.scss";
+@import "../../node_modules/slick-carousel/slick/slick-theme.scss";
+@import "animate";
+@import "fancybox.min";
+@import "../../node_modules/plyr/src/sass/plyr.scss";
+
+/*#endregion--------- Import External Css Start ------------*/
+
+/*#region------------ Essention Mixins Starts-------------*/
+
+@function letterSpaces($font, $space) {
+    $letterSize: $space / 1000 * $font / 16px;
+
+    @return #{$letterSize}rem;
+}
+
+@mixin letterSpace($font, $space) {
+    letter-spacing: letterSpaces($font, $space);
+}
+
+@function cr($size) {
+    $remSize: $size / 16px; //Default font size on html element is 100%, equivalent to 16px;
+    @return #{$remSize}rem;
+}
+
+// Mixin that will include the fall back px declaration as well as the calculated rem value.
+@mixin fontSize($size) {
+    font-size: $size;
+    font-size: cr($size);
+}
+
+// Flexbox display
+@mixin flexbox {
+    display: -ms-flexbox;
+    display: flex;
+}
+
+// Flexbox inline display
+@mixin inline-flexbox {
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+}
+
+// The 'flex' shorthand
+// - applies to: flex items
+// <positive-number>, initial, auto, or none
+@mixin flex($values) {
+    -ms-flex: $values;
+    flex: $values;
+}
+
+// The 'flex max width' shorthand
+// - applies to: flex items
+// <positive-number>, initial, auto, or none
+@mixin flexwidth($values) {
+    -ms-flex: 0 0 $values;
+    flex: 0 0 $values;
+    max-width: $values;
+}
+
+// Flex Flow Direction
+// - applies to: flex containers
+// row | row-reverse | column | column-reverse
+@mixin flex-direction($direction) {
+    -ms-flex-direction: $direction;
+    flex-direction: $direction;
+}
+
+// Flex Line Wrapping
+// - applies to: flex containers
+// nowrap | wrap | wrap-reverse
+@mixin flex-wrap($wrap) {
+    -ms-flex-wrap: $wrap;
+    flex-wrap: $wrap;
+}
+
+// Flex Direction and Wrap
+// - applies to: flex containers
+// <flex-direction> || <flex-wrap>
+@mixin flex-flow($flow) {
+    -ms-flex-flow: $flow;
+    flex-flow: $flow;
+}
+
+// Display Order
+// - applies to: flex items
+// <integer>
+@mixin order($val) {
+    -ms-flex-order: $val;
+    order: $val;
+}
+
+// Flex grow factor
+// - applies to: flex items
+// <number>
+@mixin flex-grow($grow) {
+    -ms-flex-positive: $grow;
+    flex-grow: $grow;
+}
+
+// Flex shrink
+// - applies to: flex item shrink factor
+// <number>
+@mixin flex-shrink($shrink) {
+    -ms-flex-negative: $shrink;
+    flex-shrink: $shrink;
+}
+
+// Flex basis
+// - the initial main size of the flex item
+// - applies to: flex itemsnitial main size of the flex item
+// <width>
+@mixin flex-basis($width) {
+    -ms-flex-preferred-size: $width;
+    flex-basis: $width;
+}
+
+// Axis Alignment
+// - applies to: flex containers
+// flex-start | flex-end | center | space-between | space-around
+@mixin justify-content($justify) {
+    @if $justify == "start" {
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+    }
+    @else if $justify == "end" {
+        -ms-flex-pack: end;
+        justify-content: flex-end;
+    }
+    @else if $justify == "center" {
+        -ms-flex-pack: $justify;
+        justify-content: $justify;
+    }
+    @else if $justify == "between" {
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+    }
+    @else if $justify == "around" {
+        -ms-flex-pack: distribute;
+        justify-content: space-around;
+    }
+    @else {}
+}
+
+// Packing Flex Lines
+// - applies to: multi-line flex containers
+// flex-start | flex-end | center | space-between | space-around | stretch
+@mixin align-content($align) {
+    @if $align == "start" {
+        -ms-flex-line-pack: start;
+        align-content: flex-start;
+    }
+    @else if $align == "end" {
+        -ms-flex-line-pack: end;
+        align-content: flex-end;
+    }
+    @else if $align == "center" {
+        -ms-flex-line-pack: $align;
+        align-content: $align;
+    }
+    @else if $align == "between" {
+        -ms-flex-line-pack: justify;
+        align-content: space-between;
+    }
+    @else if $align == "around" {
+        -ms-flex-line-pack: distribute;
+        align-content: space-around;
+    }
+    @else if $align == "stretch" {
+        -ms-flex-line-pack: $align;
+        align-content: $align;
+    }
+    @else {}
+}
+
+// Cross-axis Alignment
+// - applies to: flex containers
+// flex-start | flex-end | center | baseline | stretch
+@mixin align-items($align) {
+    @if $align == "start" {
+        -ms-flex-align: start;
+        align-items: flex-start;
+    }
+    @else if $align == "end" {
+        -ms-flex-align: end;
+        align-items: flex-end;
+    }
+    @else if $align == "center" {
+        -ms-flex-align: $align;
+        align-items: $align;
+    }
+    @else if $align == "baseline" {
+        -ms-flex-align: $align;
+        align-items: $align;
+    }
+    @else if $align == "stretch" {
+        -ms-flex-align: $align;
+        align-items: $align;
+    }
+    @else {}
+}
+
+// Cross-axis Alignment
+// - applies to: flex items
+// auto | flex-start | flex-end | center | baseline | stretch
+@mixin align-self($align) {
+    @if $align == "auto" {
+        -ms-flex-item-align: auto;
+        align-self: auto;
+    }
+    @else if $align == "start" {
+        -ms-flex-item-align: start;
+        align-self: flex-start;
+    }
+    @else if $align == "end" {
+        -ms-flex-item-align: end;
+        align-self: flex-end;
+    }
+    @else if $align == "center" {
+        -ms-flex-item-align: $align;
+        align-self: $align;
+    }
+    @else if $align == "baseline" {
+        -ms-flex-item-align: $align;
+        align-self: $align;
+    }
+    @else if $align == "stretch" {
+        -ms-flex-item-align: $align;
+        align-self: $align;
+    }
+    @else {}
+}
+
+@mixin flexcenter {
+    @include flexbox;
+    @include align-items(center);
+    @include justify-content(center);
+}
+
+/*#endregion------------Essention Mixins Ends-------------*/
+
+/*#region------------ Normalize Style Starts---------------*/
+@import "normalize";
+
+/*#endregion------------ Normalize Style Ends --------------*/
+
+/*#region------------ MAterial Input SlideLine Style Starts---------------*/
+@import "materialinput";
+
+/*#endregion------------ MAterial Input SlideLine Style Ends --------------*/
+
+/*#region------------ Waypoint Anim Style Starts---------------*/
+@import "waypointanim";
+
+/*#endregion------------ Waypoint Anim Style Ends --------------*/
+
+/*#region================================== Home Page Starts ================================*/
+
+p {
+    font-size: cr(14px);
+}
+
+/*------------------- Header starts --------------------*/
+
+header {
+    position: fixed;
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0;
+
+    .container {
+        @include flexbox;
+        @include align-items(center);
+    }
+}
+
+.header-inr {
+    border-bottom: 1px solid rgba(206, 161, 0, 0.38);
+}
+
+.lgo-mn {
+    max-width: cr(219px);
+    width: 100%;
+    transform-origin: left center;
+    margin-right: auto;
+
+    img {
+        width: 100%;
+    }
+}
+
+ul.tpcontact,
+ul.tpmnu {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+
+    &:not(:last-child) {
+        margin-right: cr(25px);
+    }
+}
+
+ul.tpcontact {
+    li {
+        font-size: cr(13px);
+        color: #ffffff;
+        font-family: $mont;
+        font-weight: 300;
+
+        &:not(:last-child) {
+            margin-right: cr(20px);
+        }
+
+        i {
+            margin-right: cr(10px);
+        }
+    }
+}
+
+ul.tpmnu {
+    li {
+        padding: 0 cr(20px);
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            width: 1px;
+            height: 12px;
+            background: #fff;
+        }
+
+        a {
+            font-size: cr(13px);
+            color: #ffffff;
+            font-family: $mont;
+            font-weight: 300;
+
+            i {
+                margin-left: cr(6px);
+            }
+        }
+    }
+}
+
+button.mn-tgl {
+    display: block;
+    background: none;
+
+    i {
+        display: block;
+        width: 25px;
+        height: 18px;
+
+        span {
+            position: relative;
+            display: block;
+            top: 0;
+            height: 3px;
+            margin: 4px 0;
+            background-color: #fff;
+            -webkit-border-radius: 0;
+            -webkit-background-clip: padding-box;
+            -moz-border-radius: 0;
+            -moz-background-clip: padding;
+            border-radius: 0;
+            background-clip: padding-box;
+            transition: all .4s ease-in-out;
+
+            &:first-child {
+                margin-top: 0;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .mnu-opn & {
+        opacity: 1;
+
+        i {
+            span {
+                transition-delay: .1s;
+                background-color: #211d62;
+
+                &:first-child {
+                    top: 8px;
+                    transform: rotate(45deg);
+                }
+
+                &:nth-child(2) {
+                    zoom: 1;
+                    filter: alpha(opacity = 0);
+                    -webkit-opacity: 0;
+                    -moz-opacity: 0;
+                    opacity: 0;
+                }
+
+                &:last-child {
+                    top: -8px;
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+    }
+}
+
+/*------------------- Header ends ----------------------*/
+
+/*------------------- Banner starts --------------------*/
+
+a.knowmore-btn, button.knowmore-btn, .knowmore-bx span.knowmore-btn {
+    font-size: cr(16px);
+    color: #fff;
+    font-family: $titi;
+    font-weight: lighter;
+
+    @include letterSpace(16px, 480);
+
+    i {
+        margin-left: cr(10px);
+    }
+}
+
+$headerhieght: 60px;
+$quicklinkhieght: 120px;
+
+section.bnr-wrp {
+    height: 100vh;
+    position: relative;
+}
+
+.carousel, .carousel-inner, .carousel-item, .bnr-img {
+    height: 100%;
+}
+
+.bnr-cptn {
+    @include flexbox;
+    @include align-items(center);
+
+    position: absolute;
+    top: $headerhieght;
+    bottom: $quicklinkhieght;
+    left: 0;
+    margin: auto;
+    width: 100%;
+    height: calc(100vh - (#{$headerhieght} - #{$quicklinkhieght}));
+    color: #fff;
+
+    h1 {
+        font-size: cr(104px);
+        font-family: $titi;
+        font-weight: bold;
+        line-height: cr(60px);
+        margin-bottom: cr(45px);
+
+        em {
+            display: block;
+            font-size: cr(16px);
+            font-style: normal;
+            font-family: $titi;
+            font-weight: lighter;
+            line-height: cr(50px);
+
+            @include letterSpace(16px, 540);
+        }
+    }
+
+    h3 {
+        font-size: cr(34px);
+        font-family: $titi;
+        font-weight: bold;
+        margin-bottom: cr(50px);
+
+        em {
+            font-style: normal;
+            display: block;
+        }
+    }
+}
+
+.bnr-img {
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(74, 0, 0, 0.24);
+    }
+}
+
+.bnr-actions {
+    position: absolute;
+    z-index: 15;
+    top: $headerhieght;
+    left: calc(((100vw - 1200px) / 2) - #{cr(90px)});
+    width: cr(55px);
+    height: calc(100vh - #{$headerhieght} - #{$quicklinkhieght});
+    @include flexcenter();
+    @include flex-direction(column);
+
+    .carousel-indicators {
+        position: relative;
+        right: initial;
+        bottom: initial;
+        left: initial;
+        padding-left: 0;
+        margin-right: 0;
+        margin-left: 0;
+        @include flex-direction(column);
+        li {
+            flex: 0 1 auto;
+            width: 9px;
+            height: 9px;
+            margin: 0;
+            border-radius: 50%;
+            text-indent: -999px;
+            cursor: pointer;
+            background-color: rgba(243, 243, 243, 0.45);
+            &:not(:last-child) {
+                margin-bottom: 12px;
+            }
+            &.active {
+                background-color: rgba(243, 243, 243, 0.87);
+            }
+        }
+    }
+}
+
+.playpause-btn {
+    background: none;
+    outline: none;
+    padding: 0;
+    position: relative;
+    margin-bottom: cr(15px);
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 96%;
+        height: 96%;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        border-radius: 50%;
+        border: 1.5px solid rgba(255, 255, 255, 0.5);
+    }
+}
+
+.playpause {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    display: block;
+    box-sizing: border-box;
+    width: 0;
+    height: 12px;
+    border-color: transparent transparent transparent #fff;
+    transition: 200ms all ease;
+    cursor: pointer;
+    border-style: double;
+    border-width: 0px 0 0px 10px;
+
+    .playpause-btn[data-play="off"] & {
+        border-style: solid;
+        border-width: 6px 0 6px 10px;
+    }
+}
+
+#courselprogressbar {
+    width: 100%;
+    height: 3px;
+    background: #000;
+}
+
+.hexagon-bx {
+    position: relative;
+    list-style-type: none;
+    width: 27.85714285714286%;
+    padding-bottom: 32.16760145166612%;
+    overflow: hidden;
+    visibility: hidden;
+    transform: rotate(-30deg) skewY(30deg);
+
+    & * {
+        visibility: visible;
+    }
+}
+
+.hexagon-inr {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: #fff;
+    overflow: hidden;
+    transform: skewY(-30deg) rotate(60deg);
+    -webkit-backface-visibility: hidden;
+    position: absolute;
+
+    & > * {
+        position: relative;
+    }
+}
+
+.hexagon-block {
+    transform: rotate(-30deg);
+    width: 116%;
+    height: 87%;
+    text-align: center;
+    left: -8%;
+    top: 6%;
+}
+
+.quicklinks-mn {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: $quicklinkhieght;
+
+    @include flexbox;
+    @include flex-wrap(wrap);
+}
+
+$quickcolors: #854c36 #154b7e #6a2658 #8d8752;
+
+.quicklinks-bx {
+    @include flexwidth(25%);
+    @include flex-direction(column);
+    @include flexcenter;
+
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    @each $quickcolor in $quickcolors {
+        $i: index($quickcolors, $quickcolor);
+
+        &:nth-child(#{$i}) {
+            &::before {
+                background: rgba($quickcolor, 0.79);
+            }
+        }
+    }
+
+    & > * {
+        position: relative;
+    }
+
+    span {
+        margin-bottom: cr(10px);
+    }
+
+    h4 {
+        font-size: cr(20px);
+        color: #ffffff;
+        font-family: $titi;
+        font-weight: 600;
+    }
+}
+
+/*------------------- Banner ends ----------------------*/
+
+.pgabt-mn {
+    @include flexbox();
+}
+
+.pgabt-knw {
+    @include flexwidth(36%);
+    padding: cr(70px) cr(70px) cr(75px);
+    padding-left: calc((100vw - 1170px) / 2);
+}
+
+.pgabt-det {
+    @include flexwidth(64%);
+    padding: cr(70px) cr(70px) cr(75px);
+    padding-right: calc((100vw - 1170px) / 2);
+    p {
+        font-size: cr(16px);
+        color: #121212;
+        font-family: $titi;
+        line-height: cr(27px);
+        text-align: justify;
+    }
+}
+
+.pgabtknw-det {
+    h4 {
+        font-size: cr(57px);
+        color: #fff;
+        font-family: $titi;
+        font-weight: bold;
+        line-height: 1;
+        margin-bottom: cr(15px);
+    }
+}
+
+h2.mn-h2 {
+    font-size: cr(40px);
+    color: #00a6d2;
+    font-family: $titi;
+    margin-bottom: cr(30px);
+}
+
+/*------------------- Aboutus starts --------------------*/
+
+/*------------------- Aboutus ends ----------------------*/
+
+/*------------------- Dummy starts --------------------*/
+
+/*------------------- Dummy ends ----------------------*/
+
+/*#endregion=============================== Home Page Ends ==================================*/
+
+/*#region$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ Fire-Fox Hack Starts $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/
+
+@import "firefoxhack";
+
+/*#endregion$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ Fire-Fox Hack Ends $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/
+
+/*#region################################# Media Queries ######################################*/
+
+@import "mediaquery";
+
+/*#endregion############################## Media Queries ######################################*/

@@ -1,0 +1,154 @@
+.matrlfrm {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+
+    .matinp {
+        position: relative;
+        margin: 0;
+        width: 100%;
+        height: cr(60px);
+        padding-top: cr(20px);
+        margin-bottom: 0;
+        vertical-align: top;
+        overflow: hidden;
+
+        &.mattext {
+            height: cr(160px);
+        }
+
+        label {
+            background: #fff;
+            position: relative;
+            width: 100%;
+            height: 100%;
+            padding: cr(8px) cr(18px);
+            border-radius: cr(3px);
+            pointer-events: none;
+        }
+    }
+
+    input:not([type="checkbox"]):not([type="radio"]),
+    textarea,
+    select {
+        position: absolute;
+        width: 100%;
+        font-size: 1rem;
+        height: calc( 100% - #{cr(20px)});
+        padding: cr(8px) cr(18px);
+        background: none;
+        outline: none;
+        border: none;
+        transition: all .3s;
+        z-index: 1;
+
+        + label[data-placeholder]:before {
+            content: attr(data-placeholder);
+            display: inline-block;
+            font-size: cr(13px);
+            color: #737373;
+            white-space: nowrap;
+            transition: 0.3s ease-in-out;
+        }
+
+        &.inpfld + label[data-placeholder]:before {
+            transition-duration: .2s;
+            transform: translate3d(cr(-6px), -2.5em, 0) scale3d(0.9, 0.9, 1);
+        }
+
+        &:not(.inpfld) + label[data-placeholder][data-alt]:before {
+            content: attr(data-alt);
+        }
+    }
+
+    &.matrlbdr {
+        .matinp {
+            height: cr(52px);
+            padding-top: cr(12px);
+
+            &.mattext {
+                height: cr(142px);
+            }
+
+            label {
+                border: 1px solid #c0c0c0;
+                background: none;
+            }
+        }
+
+        input:not([type="checkbox"]):not([type="radio"]),
+        textarea,
+        select {
+            height: calc( 100% - #{cr(12px)});
+
+            + label[data-placeholder]:before {
+                background-image: linear-gradient(to bottom, #fff, #fff);
+                background-size: 100% 6px;
+                background-repeat: no-repeat;
+                background-position: center;
+                padding: 0 cr(5px);
+                transform: translate3d(cr(-5px), 0, 0);
+            }
+
+            &.inpfld {
+                + label[data-placeholder]:before {
+                    transform: translate3d(cr(-5px), cr(-22px), 0) scale3d(1, 0.9, 1);
+                }
+            }
+        }
+    }
+
+    &.matrlline {
+        .matinp {
+            label {
+                border: none;
+                border-radius: 0;
+                border-bottom: 1px solid #b3b3b3;
+                background: none;
+                padding-left: 0;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -1px;
+                    left: 0;
+                    width: 100%;
+                    height: 1px;
+                    background: #79b628;
+                    transform: translate3d(-101%, 0, 0);
+                    transition: transform 0.3s;
+                    z-index: 2;
+                }
+            }
+        }
+
+        input:not([type="checkbox"]):not([type="radio"]),
+        textarea,
+        select {
+            padding-left: 0;
+
+            + label[data-placeholder]:before {
+                background-image: linear-gradient(to bottom, #fff, #fff);
+                background-size: 100% 6px;
+                background-repeat: no-repeat;
+                background-position: center;
+                padding: 0 cr(5px);
+                transform: translate3d(cr(-5px), 0, 0);
+            }
+
+            &.inpfld {
+                + label {
+                    &::after {
+                        transform: translate3d(0, 0, 0);
+                    }
+
+                    &[data-placeholder]:before {
+                        transform: translate3d(cr(-5px), cr(-22px), 0) scale3d(1, 0.9, 1);
+                    }
+                }
+            }
+        }
+    }
+}

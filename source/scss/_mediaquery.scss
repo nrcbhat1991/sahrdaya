@@ -1,0 +1,49 @@
+@media screen and (min-width: 1200px) {
+    .container {
+        max-width: 1200px;
+    }
+}
+
+@media (min-width: 1350px) {}
+
+@media (min-width: 1440px) {}
+
+@media (min-width: 1600px) {}
+
+
+@media (max-width: 1199px) and (min-width: 992px) {
+    /*================ Home Page Starts =================*/
+    /*--------------------Header Starts --------------------------*/
+    /*--------------------Header Ends --------------------------*/
+    /*--------------------Carousel Starts --------------------------*/
+    /*--------------------Carousel Ends --------------------------*/
+    /*================ Home Page Ends =================*/
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+    /*================ Home Page Starts =================*/
+    /*--------------------Header Starts --------------------------*/
+    /*--------------------Header Ends --------------------------*/
+    /*--------------------Carousel Starts --------------------------*/
+    /*--------------------Carousel Ends --------------------------*/
+    /*================ Home Page Ends =================*/
+}
+
+@media screen and (min-width: 768px) {}
+
+@media (max-width: 767px) and (min-width: 200px) {
+    /*================ Home Page Starts =================*/
+    /*--------------------Header Starts --------------------------*/
+    /*--------------------Header Ends --------------------------*/
+    /*--------------------Carousel Starts --------------------------*/
+    /*--------------------Carousel Ends --------------------------*/
+    /*================ Home Page Ends =================*/
+}
+
+@media (max-width: 575px) {}
+
+@media (max-width: 450px) {}
+
+@media (max-width: 360px) {}
+
+@media (max-width: 300px) {}
