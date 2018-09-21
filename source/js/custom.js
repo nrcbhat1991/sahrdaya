@@ -7,7 +7,7 @@ $(window).on('load', function () {
         handler: function () {
             $(this.element).addClass("wy-anim")
         },
-        offset: '100%'
+        offset: '90%'
     });
     /*----------------------- Bootstrap Carousel Pause Starts ---------------------------*/
 
@@ -90,15 +90,18 @@ $(window).on('load', function () {
                 animate();
             }
             update();
-            $('#carouselExampleControls').on('slide.bs.carousel', function () {
-                kojo = 0;
-                update();
-            });
 
             $(function () {
 
                 var crsl = $('#carouselExampleControls'),
                     playpause = $('.playpause-btn');
+                $('#carouselExampleControls').on('slide.bs.carousel', function () {
+                    kojo = 0;
+                    isPaused = false;
+                    playpause.attr('data-play', 'on');
+                    crsl.carousel('cycle');
+                    update();
+                });
                 playpause.click(function () {
                     togglePlay($(this));
                     return false;
@@ -180,26 +183,6 @@ $(document).ready(function () {
 
     // /*----------------------- Acadamics Slide Ends ------------------------*/
 
-
-    // var $carousel = $('.pgnews-sldr').flickity({
-    //     cellAlign: 'left',
-    //     contain: true,
-    //     autoPlay: true,
-    //     wrapAround: true,
-    //     prevNextButtons: false,
-    //     pageDots: false
-    // });
-    // var flkty = $carousel.data('flickity');
-    // // elements
-    // var $cellButtons = $('.pgnews-det h6').find('button');
-
-    // $('.pgnews-det .btn-prev').on('click', function () {
-    //     $carousel.flickity('previous');
-    // });
-    // $('.pgnews-det .btn-nxt').on('click', function () {
-    //     $carousel.flickity('next');
-    // });
-
     // /*----------------------- Acadamics Slide Ends ------------------------*/
 
 
@@ -227,17 +210,22 @@ $(document).ready(function () {
     /*----------------------- Acadamics Slide Ends ------------------------*/
 
 
-    var $carousel = $('.pgnews-sldr').flickity({
-        cellAlign: 'left',
-        contain: true,
-        autoPlay: true,
-        wrapAround: true,
-        prevNextButtons: false,
-        pageDots: false
-    });
+    // $('.pgstudentsay-sldr').flickity({
+    //     prevNextButtons: false,
+    //     pageDots: false
+    // });
+    // // 2nd carousel, navigation
+    // $('.pglifethumb-sldr').flickity({
+    //     cellAlign: 'left',
+    //     asNavFor: '.pgstudentsay-sldr',
+    //     contain: true,
+    //     pageDots: false,
+    //     prevNextButtons: false
+    // });
 
-    $('.pgrecruters-sldr').slick({
-        slidesToShow: 4,
+
+    $('.pglifesaha-sldr').slick({
+        slidesToShow: 6,
         dots: false,
         autoplay: true,
         autoplaySpeed: 3000,
@@ -245,7 +233,94 @@ $(document).ready(function () {
         pauseOnHover: true,
         nav: true,
         arrows: false,
-        appendArrows: $("section.pgnews-wrp h3 span")
+        responsive: [
+            {
+                breakpoint: 1200,
+                settings: {
+                    centerMode: false,
+                    slidesToShow: 5
+                }
+            },
+            {
+                breakpoint: 991,
+                settings: {
+                    centerMode: false,
+                    slidesToShow: 4
+                }
+            },
+            {
+                breakpoint: 767,
+                settings: {
+                    centerMode: false,
+                    slidesToShow: 3
+                }
+            },
+            {
+                breakpoint: 550,
+                settings: {
+                    centerMode: false,
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 450,
+                settings: {
+                    centerMode: false,
+                    slidesToShow: 1
+                }
+            }
+        ]
+    });
+
+    $('.pglifethumb-sldr').slick({
+        slidesToShow: 3,
+        dots: false,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        slidesToScroll: 1,
+        pauseOnHover: true,
+        nav: true,
+        arrows: true,
+        focusOnSelect: true,
+        centerMode: true,
+        variableWidth: true,
+        asNavFor: '.pgstudentsay-sldr'
+    });
+
+    $('.pgstudentsay-sldr').slick({
+        slidesToShow: 1,
+        dots: false,
+        nav: false,
+        // fade: true,
+        arrows: false,
+        asNavFor: '.pglifethumb-sldr'
+    });
+
+
+    $('.pgcampusdet-sldr').slick({
+        slidesToShow: 3,
+        rows: 2,
+        dots: false,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        slidesToScroll: 1,
+        pauseOnHover: true,
+        nav: true,
+        arrows: true,
+        appendArrows: $(".pgcampus-cont h2 span")
+    });
+
+
+    $('.pgnews-sldr').slick({
+        slidesToShow: 4,
+        dots: false,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        slidesToScroll: 1,
+        pauseOnHover: true,
+        nav: true,
+        arrows: true,
+        appendArrows: $(".pgnews-det h3 span")
     });
 
     /*----------------------- Acadamics Slide Ends ------------------------*/
@@ -253,21 +328,61 @@ $(document).ready(function () {
 
     /*----------------------- Thumnail Slider Ends ------------------------*/
 
-    $('.pgrecruters-sldr').slick({
-        speed: 3000,
-        autoplay: true,
-        autoplaySpeed: 0,
-        cssEase: 'linear',
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        variableWidth: true,
-        arrows: false,
-        pauseOnHover: false,
-        draggable: false
-    });
+    // $('.pgrecruters-sldr').slick({
+    //     speed: 3000,
+    //     autoplay: true,
+    //     autoplaySpeed: 0,
+    //     cssEase: 'linear',
+    //     slidesToShow: 1,
+    //     slidesToScroll: 1,
+    //     variableWidth: true,
+    //     arrows: true,
+    //     pauseOnHover: false,
+    //     draggable: false,
+    //     appendArrows: $(".pgrecruters-mn h2 span")
+    // });
 
     /*----------------------- Thumnail Slider Starts ------------------------*/
 
+
+    $('.pggalmn-sldr').slick({
+        slidesToShow: 4,
+        dots: false,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        slidesToScroll: 1,
+        vertical: true,
+        verticalSwiping: true,
+        pauseOnHover: true,
+        nav: true,
+        arrows: true,
+        appendArrows: $(".pggalmnsldr-h3 span"),
+        responsive: [
+            {
+                breakpoint: 991,
+                settings: {
+                    centerMode: false
+                }
+            },
+            {
+                breakpoint: 767,
+                settings: {
+                    centerMode: false,
+                    vertical: false,
+                    verticalSwiping: false,
+                }
+            },
+            {
+                breakpoint: 550,
+                settings: {
+                    slidesToShow: 1,
+                    centerMode: false,
+                    vertical: false,
+                    verticalSwiping: false
+                }
+            }
+        ]
+    });
 
     $('.pggalnews-sldr').slick({
         slidesToShow: 4,
@@ -279,7 +394,8 @@ $(document).ready(function () {
         verticalSwiping: true,
         pauseOnHover: true,
         nav: true,
-        arrows: false,
+        arrows: true,
+        appendArrows: $(".pggalnewssldr-h3 span"),
         responsive: [
             {
                 breakpoint: 991,
@@ -360,6 +476,39 @@ $(document).ready(function () {
 
     // /*----------------------- Ripple Effect Light Starts ---------------------------*/
 
+
+    var forEach = function (collection, callback, scope) {
+        if (Object.prototype.toString.call(collection) === '[object Object]') {
+            for (var prop in collection) {
+                if (Object.prototype.hasOwnProperty.call(collection, prop)) {
+                    callback.call(scope, collection[prop], prop, collection);
+                }
+            }
+        } else {
+            for (var i = 0, len = collection.length; i < len; i++) {
+                callback.call(scope, collection[i], i, collection);
+            }
+        }
+    };
+
+    var _countList = document.querySelectorAll('.pgcounter-bx span');
+
+    var countAnimation = (function () {
+
+        var startCount = function () {
+            var options = {
+                useEasing: true,
+                useGrouping: true,
+                separator: '',
+                decimal: '.',
+            };
+            var options2 = {
+                useEasing: true,
+                useGrouping: true,
+                separator: '',
+                decimal: '.',
+                prefix: '0',
+            };
             forEach(_countList, function (value, index) {
                 var endValue = _countList[index].textContent;
                 if (_countList[index].className == 'pgcounter-prefix') {
@@ -376,8 +525,23 @@ $(document).ready(function () {
             startCount: startCount
         };
 
+    })();
+
+    $('.pgcounter-mn').waypoint({
+        handler: function (direction) {
+            if (direction === 'down') {
+                countAnimation.startCount()
+            }
+            this.destroy()
+        },
+        offset: '80%'
+    });
+
 
     // /*----------------------- Ripple Effect Light Ends ---------------------------*/
+
+
+    /*----------------------- Ripple Effect Light Ends ---------------------------*/
 
 
 
@@ -424,7 +588,7 @@ $(document).ready(function () {
 
 
 
-    $('a.fancybox, .pggal-bx a').fancybox({
+    $('a.fancybox').fancybox({
         protect: true
     });
 
@@ -469,33 +633,62 @@ $(document).ready(function () {
     $(window).resize(checkSize);
 
     /*----------------------- Menu Lock Ends ---------------------------*/
-    // controls: ['<div class="control-pad"><button type="button" class="plyr__control plyr__control--overlaid" data-plyr="play" aria-label="Play"><div class="plyr_img"><img src="images/video-icon.png"></div><span class="plyr__sr-only">Play</span><h4>Watch Video</h4></button></div> <div class="plyr__controls"> <button type="button" class="plyr__control" data-plyr="restart"> <svg role="presentation"><use xlink:href="#plyr-restart"></use></svg> <span class="plyr__tooltip" role="tooltip">Restart</span> </button> <button type="button" class="plyr__control" data-plyr="rewind"> <svg role="presentation"><use xlink:href="#plyr-rewind"></use></svg> <span class="plyr__tooltip" role="tooltip">Rewind{seektime}secs</span> </button> <button type="button" class="plyr__control" aria-label="Play,{title}" data-plyr="play"> <svg class="icon--pressed" role="presentation"><use xlink:href="#plyr-pause"></use></svg> <svg class="icon--not-pressed" role="presentation"><use xlink:href="#plyr-play"></use></svg> <span class="label--pressed plyr__tooltip" role="tooltip">Pause</span> <span class="label--not-pressed plyr__tooltip" role="tooltip">Play</span> </button> <button type="button" class="plyr__control" data-plyr="fast-forward"> <svg role="presentation"><use xlink:href="#plyr-fast-forward"></use></svg> <span class="plyr__tooltip" role="tooltip">Forward{seektime}secs</span> </button> <div class="plyr__progress"> <input data-plyr="seek" type="range" min="0" max="100" step="0.01" value="0" aria-label="Seek"> <progress class="plyr__progress__buffer" min="0" max="100" value="0">% buffered</progress> <span role="tooltip" class="plyr__tooltip">00:00</span> </div><div class="plyr__time plyr__time--current" aria-label="Current time">00:00</div><div class="plyr__time plyr__time--duration" aria-label="Duration">00:00</div><button type="button" class="plyr__control" aria-label="Mute" data-plyr="mute"> <svg class="icon--pressed" role="presentation"><use xlink:href="#plyr-muted"></use></svg> <svg class="icon--not-pressed" role="presentation"><use xlink:href="#plyr-volume"></use></svg> <span class="label--pressed plyr__tooltip" role="tooltip">Unmute</span> <span class="label--not-pressed plyr__tooltip" role="tooltip">Mute</span> </button> <div class="plyr__volume"> <input data-plyr="volume" type="range" min="0" max="1" step="0.05" value="1" autocomplete="off" aria-label="Volume"> </div><button type="button" class="plyr__control" data-plyr="captions"> <svg class="icon--pressed" role="presentation"><use xlink:href="#plyr-captions-on"></use></svg> <svg class="icon--not-pressed" role="presentation"><use xlink:href="#plyr-captions-off"></use></svg> <span class="label--pressed plyr__tooltip" role="tooltip">Disable captions</span> <span class="label--not-pressed plyr__tooltip" role="tooltip">Enable captions</span> </button> <button type="button" class="plyr__control" data-plyr="fullscreen"> <svg class="icon--pressed" role="presentation"><use xlink:href="#plyr-exit-fullscreen"></use></svg> <svg class="icon--not-pressed" role="presentation"><use xlink:href="#plyr-enter-fullscreen"></use></svg> <span class="label--pressed plyr__tooltip" role="tooltip">Exit fullscreen</span> <span class="label--not-pressed plyr__tooltip" role="tooltip">Enter fullscreen</span> </button></div>'],
 
-    // var plyr = new Plyr('#showreel', {
-    //     autoplay: false,
-    //     controls: ["<div class='title'>","This is some text","</div>","<div class='button'>","<button type='button' class='btn btn-secondary'>This is a button</button>","</div>","<div class='plyr__controls'>", "<button type='button' data-plyr='play'>", "<svg><use xlink:href='#plyr-play'></use></svg>", "<span class='plyr__sr-only'>Play</span>", "</button>", "<button type='button' data-plyr='pause'>", "<svg><use xlink:href='#plyr-pause'></use></svg>", "<span class='plyr__sr-only'>Pause</span>", "</button>", "<span class='plyr__time'>", "<span class='plyr__sr-only'>Current time</span>", "<span class='plyr__time--current'>00:00</span>", "</span>", "<span class='plyr__progress'>", "<label for='seek{id}' class='plyr__sr-only'>Seek</label>", "<input id='seek{id}' class='plyr__progress--seek' type='range' min='0' max='100' step='0.1' value='0' data-plyr='seek'>", "<progress class='plyr__progress--played' max='100' value='0' role='presentation'></progress>", "<progress class='plyr__progress--buffer' max='100' value='0'>", "<span>0</span>% buffered", "</progress>", "<span class='plyr__tooltip'>00:00</span>", "</span>", "<span class='plyr__time'>", "<span class='plyr__sr-only'>Duration</span>", "<span class='plyr__time--duration'>00:00</span>", "</span>", "<button type='button' data-plyr='mute'>", "<svg class='icon--muted'><use xlink:href='#plyr-muted'></use></svg>", "<svg><use xlink:href='#plyr-volume'></use></svg>", "<span class='plyr__sr-only'>Toggle Mute</span>", "</button>", "<span class='plyr__volume'>", "<label for='volume{id}' class='plyr__sr-only'>Volume</label>", "<input id='volume{id}' class='plyr__volume--input' type='range' min='0' max='10' value='5' data-plyr='volume'>", "<progress class='plyr__volume--display' max='10' value='0' role='presentation'></progress>", "</span>", "<button type='button' data-plyr='captions'>", "<svg class='icon--captions-on'><use xlink:href='#plyr-captions-on'></use></svg>", "<svg><use xlink:href='#plyr-captions-off'></use></svg>", "<span class='plyr__sr-only'>Toggle Captions</span>", "</button>", "<button type='button' data-plyr='fullscreen'>", "<svg class='icon--exit-fullscreen'><use xlink:href='#plyr-exit-fullscreen'></use></svg>", "<svg><use xlink:href='#plyr-enter-fullscreen'></use></svg>", "<span class='plyr__sr-only'>Toggle Fullscreen</span>", "</button>","</div>"],
-    //     fullscreen: {
-    //         enabled: false
-    //     }
-    // });
-    var player = new Plyr('#showreel');
+    const controls = `
+    <div class="control-pad"><button type="button" class="plyr__control plyr__control--overlaid" data-plyr="play" aria-label="Play"><div class="plyr_img"><img src="images/video-icon.png"></div><span class="plyr__sr-only">Play</span><h4><span>Play</span>Watch <em>Campus Life 360</em> Video Tour</h4></button></div>
+    <div class="plyr__controls">
+    <button type="button" class="plyr__control" data-plyr="restart">
+        <svg role="presentation"><use xlink:href="#plyr-restart"></use></svg>
+        <span class="plyr__tooltip" role="tooltip">Restart</span>
+    </button>
+    <button type="button" class="plyr__control" data-plyr="rewind">
+        <svg role="presentation"><use xlink:href="#plyr-rewind"></use></svg>
+        <span class="plyr__tooltip" role="tooltip">Rewind {seektime} secs</span>
+    </button>
+    <button type="button" class="plyr__control" aria-label="Play, {title}" data-plyr="play">
+        <svg class="icon--pressed" role="presentation"><use xlink:href="#plyr-pause"></use></svg>
+        <svg class="icon--not-pressed" role="presentation"><use xlink:href="#plyr-play"></use></svg>
+        <span class="label--pressed plyr__tooltip" role="tooltip">Pause</span>
+        <span class="label--not-pressed plyr__tooltip" role="tooltip">Play</span>
+    </button>
+    <button type="button" class="plyr__control" data-plyr="fast-forward">
+        <svg role="presentation"><use xlink:href="#plyr-fast-forward"></use></svg>
+        <span class="plyr__tooltip" role="tooltip">Forward {seektime} secs</span>
+    </button>
+    <div class="plyr__progress">
+        <input data-plyr="seek" type="range" min="0" max="100" step="0.01" value="0" aria-label="Seek">
+        <progress class="plyr__progress__buffer" min="0" max="100" value="0">% buffered</progress>
+        <span role="tooltip" class="plyr__tooltip">00:00</span>
+    </div>
+    <div class="plyr__time plyr__time--current" aria-label="Current time">00:00</div>
+    <div class="plyr__time plyr__time--duration" aria-label="Duration">00:00</div>
+    <button type="button" class="plyr__control" aria-label="Mute" data-plyr="mute">
+        <svg class="icon--pressed" role="presentation"><use xlink:href="#plyr-muted"></use></svg>
+        <svg class="icon--not-pressed" role="presentation"><use xlink:href="#plyr-volume"></use></svg>
+        <span class="label--pressed plyr__tooltip" role="tooltip">Unmute</span>
+        <span class="label--not-pressed plyr__tooltip" role="tooltip">Mute</span>
+    </button>
+    <div class="plyr__volume">
+        <input data-plyr="volume" type="range" min="0" max="1" step="0.05" value="1" autocomplete="off" aria-label="Volume">
+    </div>
+    <button type="button" class="plyr__control" data-plyr="captions">
+        <svg class="icon--pressed" role="presentation"><use xlink:href="#plyr-captions-on"></use></svg>
+        <svg class="icon--not-pressed" role="presentation"><use xlink:href="#plyr-captions-off"></use></svg>
+        <span class="label--pressed plyr__tooltip" role="tooltip">Disable captions</span>
+        <span class="label--not-pressed plyr__tooltip" role="tooltip">Enable captions</span>
+    </button>
+    <button type="button" class="plyr__control" data-plyr="fullscreen">
+        <svg class="icon--pressed" role="presentation"><use xlink:href="#plyr-exit-fullscreen"></use></svg>
+        <svg class="icon--not-pressed" role="presentation"><use xlink:href="#plyr-enter-fullscreen"></use></svg>
+        <span class="label--pressed plyr__tooltip" role="tooltip">Exit fullscreen</span>
+        <span class="label--not-pressed plyr__tooltip" role="tooltip">Enter fullscreen</span>
+    </button>
+</div>
+`;
 
-    // var controler = [`<div class="control-pad"><button type="button" class="plyr__control plyr__control--overlaid" data-plyr="play" aria-label="Play"><div class="plyr_img"><img src="images/video-icon.png"></div><span class="plyr__sr-only">Play</span><h4>Watch Video</h4></button></div> <div class="plyr__controls"> <button type="button" class="plyr__control" data-plyr="restart"> <svg role="presentation"><use xlink:href="#plyr-restart"></use></svg> <span class="plyr__tooltip" role="tooltip">Restart</span> </button> <button type="button" class="plyr__control" data-plyr="rewind"> <svg role="presentation"><use xlink:href="#plyr-rewind"></use></svg> <span class="plyr__tooltip" role="tooltip">Rewind{seektime}secs</span> </button> <button type="button" class="plyr__control" aria-label="Play,{title}" data-plyr="play"> <svg class="icon--pressed" role="presentation"><use xlink:href="#plyr-pause"></use></svg> <svg class="icon--not-pressed" role="presentation"><use xlink:href="#plyr-play"></use></svg> <span class="label--pressed plyr__tooltip" role="tooltip">Pause</span> <span class="label--not-pressed plyr__tooltip" role="tooltip">Play</span> </button> <button type="button" class="plyr__control" data-plyr="fast-forward"> <svg role="presentation"><use xlink:href="#plyr-fast-forward"></use></svg> <span class="plyr__tooltip" role="tooltip">Forward{seektime}secs</span> </button> <div class="plyr__progress"> <input data-plyr="seek" type="range" min="0" max="100" step="0.01" value="0" aria-label="Seek"> <progress class="plyr__progress__buffer" min="0" max="100" value="0">% buffered</progress> <span role="tooltip" class="plyr__tooltip">00:00</span> </div><div class="plyr__time plyr__time--current" aria-label="Current time">00:00</div><div class="plyr__time plyr__time--duration" aria-label="Duration">00:00</div><button type="button" class="plyr__control" aria-label="Mute" data-plyr="mute"> <svg class="icon--pressed" role="presentation"><use xlink:href="#plyr-muted"></use></svg> <svg class="icon--not-pressed" role="presentation"><use xlink:href="#plyr-volume"></use></svg> <span class="label--pressed plyr__tooltip" role="tooltip">Unmute</span> <span class="label--not-pressed plyr__tooltip" role="tooltip">Mute</span> </button> <div class="plyr__volume"> <input data-plyr="volume" type="range" min="0" max="1" step="0.05" value="1" autocomplete="off" aria-label="Volume"> </div><button type="button" class="plyr__control" data-plyr="captions"> <svg class="icon--pressed" role="presentation"><use xlink:href="#plyr-captions-on"></use></svg> <svg class="icon--not-pressed" role="presentation"><use xlink:href="#plyr-captions-off"></use></svg> <span class="label--pressed plyr__tooltip" role="tooltip">Disable captions</span> <span class="label--not-pressed plyr__tooltip" role="tooltip">Enable captions</span> </button> <button type="button" class="plyr__control" data-plyr="fullscreen"> <svg class="icon--pressed" role="presentation"><use xlink:href="#plyr-exit-fullscreen"></use></svg> <svg class="icon--not-pressed" role="presentation"><use xlink:href="#plyr-enter-fullscreen"></use></svg> <span class="label--pressed plyr__tooltip" role="tooltip">Exit fullscreen</span> <span class="label--not-pressed plyr__tooltip" role="tooltip">Enter fullscreen</span> </button></div>`];
-
-
-    // var player = new Plyr('#showreel', {
-    //     controls: controler
-    // });
-
-
-
-
-
-
-
-
-
-
+    var player = new Plyr('#showreel', {
+        controls
+    });
 
 
 });

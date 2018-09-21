@@ -84,7 +84,16 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Impact';
+    src: url('../fonts/webfont/Impact.woff2') format('woff2'),
+        url('../fonts/webfont/Impact.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 $lato: 'Lato';
 $roboc: 'Roboto Condensed';
 $titi: 'Titillium Web';
 $mont: 'Montserrat';
+$impact: 'Impact';

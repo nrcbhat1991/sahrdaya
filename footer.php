@@ -38,7 +38,7 @@
                             <p data-wy="1">Kodakara, P.B.No.19,, Thrissur (Dt), Pin 680684,, Kerala State, India Ph: 0480-2759252, +91 7025165333  Fax No.: 0480-2726634 Email: info.sahrdayaims@gmail.com</p>
                         </div>
                         <div class="col-sm-4">
-                            <a style="display:inline-block;" data-wy="2" href="javascript:void(0)"><img src="images/getderection-bg.jpg"></a>
+                            <a style="display:block;" data-wy="2" href="javascript:void(0)"><img src="images/getderection-bg.jpg" width="100%"></a>
                         </div>
                     </div>
                 </div>

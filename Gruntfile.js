@@ -94,6 +94,7 @@ module.exports = function (grunt) {
           'node_modules/desandro-classie/classie.js',
           'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js',
           'node_modules/plyr/dist/plyr.min.js',
+          'node_modules/countup.js/dist/countUp.min.js',
 
           // Include your own custom scripts (located in the custom folder)
           'source/js/custom.js'
@@ -104,10 +105,18 @@ module.exports = function (grunt) {
       },
     },
 
+    // uglify: {
+    //   dist: {
+    //     files: {
+    //       // Shrink the file size by removing spaces
+    //       'js/build.min.js': ['js/build.min.js']
+    //     }
+    //   }
+    // },
+
     uglify: {
-      dist: {
+      my_target: {
         files: {
-          // Shrink the file size by removing spaces
           'js/build.min.js': ['js/build.min.js']
         }
       }
@@ -148,7 +157,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-uglify-es');
   grunt.loadNpmTasks('grunt-string-replace');
 
   grunt.registerTask('build', ['copy', 'string-replace:fontawesome', 'sass', 'concat', 'uglify']);
