@@ -360,14 +360,21 @@ $(document).ready(function () {
 
     // /*----------------------- Ripple Effect Light Starts ---------------------------*/
 
-    // $(function () {
-    //     $('#dl-menu').dlmenu({
-    //         animationClasses: {
-    //             classin: 'dl-animate-in-2',
-    //             classout: 'dl-animate-out-2'
-    //         }
-    //     });
-    // });
+            forEach(_countList, function (value, index) {
+                var endValue = _countList[index].textContent;
+                if (_countList[index].className == 'pgcounter-prefix') {
+                    var demo = new CountUp(value, 0, endValue, 0, 5, options2);
+                } else if (_countList[index].className == 'pgcounter-decimal') {
+                    var demo = new CountUp(value, 0, endValue, 2, 5, options);
+                } else {
+                    var demo = new CountUp(value, 0, endValue, 0, 5, options);
+                }
+                demo.start();
+            });
+        };
+        return {
+            startCount: startCount
+        };
 
 
     // /*----------------------- Ripple Effect Light Ends ---------------------------*/
