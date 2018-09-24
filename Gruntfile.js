@@ -79,6 +79,7 @@ module.exports = function (grunt) {
         stripBanners: true,
         banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
         '<%= grunt.template.today("yyyy-mm-dd") %> */',
+        sourceMap :true,
       },
       dist: {
         src: [
@@ -91,10 +92,12 @@ module.exports = function (grunt) {
           'source/js/modernizr.custom.js',
           'node_modules/slick-carousel/slick/slick.min.js',
           'node_modules/waypoints/lib/jquery.waypoints.min.js',
+          'node_modules/inview/inview.js',
           'node_modules/desandro-classie/classie.js',
           'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js',
           'node_modules/plyr/dist/plyr.min.js',
           'node_modules/countup.js/dist/countUp.min.js',
+          'source/js/turn.min.js',
 
           // Include your own custom scripts (located in the custom folder)
           'source/js/custom.js'
@@ -115,6 +118,11 @@ module.exports = function (grunt) {
     // },
 
     uglify: {
+      options : {
+        sourceMap : true,
+        sourceMapIncludeSources : true,
+        sourceMapIn : 'js/build.min.js.map'
+      },
       my_target: {
         files: {
           'js/build.min.js': ['js/build.min.js']

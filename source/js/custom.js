@@ -147,6 +147,20 @@ $(window).on('load', function () {
 
 $(document).ready(function () {
 
+    var forEach = function (collection, callback, scope) {
+        if (Object.prototype.toString.call(collection) === '[object Object]') {
+            for (var prop in collection) {
+                if (Object.prototype.hasOwnProperty.call(collection, prop)) {
+                    callback.call(scope, collection[prop], prop, collection);
+                }
+            }
+        } else {
+            for (var i = 0, len = collection.length; i < len; i++) {
+                callback.call(scope, collection[i], i, collection);
+            }
+        }
+    };
+
     /*----------------------- BG-Image Wrapper Starts ---------------------------*/
 
     $(".img-wrp").each(function () {
@@ -168,61 +182,145 @@ $(document).ready(function () {
 
 
 
-    // /*----------------------- Acadamics Slide Ends ------------------------*/
+    /*----------------------- Acadamics Slide Ends ------------------------*/
 
-    // $('.pgaccdemic-sldr').flickity({
-    //     cellAlign: 'left',
-    //     contain: true,
-    //     autoPlay: true,
-    //     wrapAround: true,
-    //     prevNextButtons: true,
-    //     pageDots: false
+    (function () {
+        'use strict';
+
+        var module = {
+            book: [
+                { state: true },
+                { intialwidth: 670 },
+                { intialheight: 380 },
+            ],
+            ratio: 1.76,
+            init: function (id) {
+                var me = this;
+                // if older browser then don't run javascript
+                if (document.addEventListener) {
+                    this.el = id;
+                    // this.el = document.getElementsByClassName(id)[0];
+                    this.resize();
+                    this.plugins();
+                    this.responsive();
+
+                    // on window resize, update the plugin size
+                    window.addEventListener('resize', function (e) {
+                        var size = me.resize();
+                        $(me.el).turn('size', size.width, size.height);
+                    });
+                }
+            },
+            resize: function () {
+
+                // if the height is too big for the window, constrain it
+                if (this.book.state == true) {
+                    var width = this.el.parentNode.clientWidth,
+                        height = Math.round(this.book.intialheight + (this.book.intialheight * (1 - (width / this.book.intialwidth))));
+                } else {
+                    if (height > padded) {
+                        height = padded;
+                        width = Math.round(height * this.ratio);
+                    } else {
+                        var width = this.el.parentNode.clientWidth,
+                            height = Math.round(width / this.ratio),
+                            padded = Math.round(document.body.clientHeight * 0.9);
+                    }
+                }
+
+                // set the width and height matching the aspect ratio
+                this.el.style.width = width + 'px';
+                this.el.style.height = height + 'px';
+
+                return {
+                    width: width,
+                    height: height
+                };
+            },
+            plugins: function () {
+                // run the plugin
+                $(this.el).turn({
+                    autoCenter: true,
+                    gradients: true,
+                    acceleration: true
+                });
+            },
+            responsive: function () {
+                if (window.innerWidth < 575) {
+                    $(this.el).turn('display', 'single');
+                }
+            },
+            bookprev: function () {
+                $(this.el).turn('previous');
+            },
+            booknext: function () {
+                $(this.el).turn('next');
+            },
+            waypoint: function () {
+                $(this.el).turn("next");
+            }
+        };
+
+
+        [].slice.call(document.querySelectorAll('.feacourse-book')).forEach(function (inputEl) {
+            module.init(inputEl);
+        });
+        // module.init('feacoursebookinit');
+
+        $('.feacourse-btn .turn-prev').on('click', function () {
+            module.bookprev();
+        });
+        $('.feacourse-btn .turn-next').on('click', function () {
+            module.booknext();
+        });
+        $('.feabook-sldr').waypoint({
+            handler: function () {
+                // module.waypoint();
+                $('.feacourse-book').turn("next");
+                this.destroy()
+            },
+            offset: '80%'
+        });
+    }());
+
+    $('.feacoursebookinit').bind('start', function (e, data, c) {
+        var $this = $(this);
+        if (data.next == 2) {
+            $this.addClass('cover-anim');
+        } else {
+            $this.removeClass('cover-anim');
+        }
+    });
+
+    // $('.feacourse-btn .turn-prev').on('click', function () {
+    //     turnbook.turn('previous');
     // });
 
-    // /*----------------------- Acadamics Slide Ends ------------------------*/
-
-    // /*----------------------- Acadamics Slide Ends ------------------------*/
-
-    // /*----------------------- Acadamics Slide Ends ------------------------*/
-
-
-    // /*----------------------- Thumnail Slider Ends ------------------------*/
-
-    // $('.pgstudentsay-sldr').flickity({
-    //     prevNextButtons: false,
-    //     pageDots: false
-    // });
-    // // 2nd carousel, navigation
-    // $('.pglifethumb-sldr').flickity({
-    //     cellAlign: 'left',
-    //     asNavFor: '.pgstudentsay-sldr',
-    //     contain: true,
-    //     pageDots: false,
-    //     prevNextButtons: false
+    // $('.feacourse-btn .turn-next').on('click', function () {
+    //     turnbook.turn('next');
     // });
 
 
-    // /*----------------------- Thumnail Slider Ends ------------------------*/
 
 
-
+    $('.feabook-sldr').slick({
+        slidesToShow: 1,
+        dots: false,
+        autoplay: false,
+        autoplaySpeed: 3000,
+        slidesToScroll: 1,
+        pauseOnHover: true,
+        nav: true,
+        draggable: false,
+        arrows: true,
+        appendArrows: $('.feacourse-mn .mn-h2 span')
+    });
 
     /*----------------------- Acadamics Slide Ends ------------------------*/
 
 
-    // $('.pgstudentsay-sldr').flickity({
-    //     prevNextButtons: false,
-    //     pageDots: false
-    // });
-    // // 2nd carousel, navigation
-    // $('.pglifethumb-sldr').flickity({
-    //     cellAlign: 'left',
-    //     asNavFor: '.pgstudentsay-sldr',
-    //     contain: true,
-    //     pageDots: false,
-    //     prevNextButtons: false
-    // });
 
+    /*----------------------- Acadamics Slide Ends ------------------------*/
 
     $('.pglifesaha-sldr').slick({
         slidesToShow: 6,
@@ -475,21 +573,6 @@ $(document).ready(function () {
 
 
     // /*----------------------- Ripple Effect Light Starts ---------------------------*/
-
-
-    var forEach = function (collection, callback, scope) {
-        if (Object.prototype.toString.call(collection) === '[object Object]') {
-            for (var prop in collection) {
-                if (Object.prototype.hasOwnProperty.call(collection, prop)) {
-                    callback.call(scope, collection[prop], prop, collection);
-                }
-            }
-        } else {
-            for (var i = 0, len = collection.length; i < len; i++) {
-                callback.call(scope, collection[i], i, collection);
-            }
-        }
-    };
 
     var _countList = document.querySelectorAll('.pgcounter-bx span');
 

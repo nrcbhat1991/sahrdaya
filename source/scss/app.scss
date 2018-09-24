@@ -434,6 +434,10 @@ a.knowmore-btn, button.knowmore-btn, .knowmore-bx span.knowmore-btn {
 
     @include letterSpace(16px, 480);
 
+    img {
+        display: inline-block;
+    }
+
     &.wite {
         color: #fff;
 
@@ -623,7 +627,7 @@ section.bnr-wrp {
     right: calc(((100vw - 1200px) / 2) - #{cr(50px)});
     top: $headerhieght;
     max-width: cr(400px);
-    top: 50%;
+    top: calc(50% - ((#{$quicklinkhieght} - #{$headerhieght})/2));
     transform: translateY(-50%);
     padding-bottom: cr(70px);
 }
@@ -685,14 +689,14 @@ $quickcolors: #854c36 #154b7e #6a2658 #8d8752;
     @include flexwidth(25%);
     @include flex-direction(column);
     @include flexcenter;
-    
+
     height: 100%;
     height: $quicklinkhieght;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     position: relative;
-    transition: height .3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: height 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 
     &::before {
         content: '';
@@ -727,6 +731,7 @@ $quickcolors: #854c36 #154b7e #6a2658 #8d8752;
         font-family: $titi;
         font-weight: 600;
     }
+
     &:hover {
         height: cr(140px);
     }
@@ -994,14 +999,119 @@ section.feacourse-wrp {
 }
 
 .feacourse-mn {
-    h2 {
+    h2.mn-h2 {
+        @include flexbox;
+
         span {
+            @include flexbox;
             @include slickroundbtn(37px, 12px, #00a6d2);
+
+            margin-left: auto;
+            position: relative;
         }
     }
 }
 
+.feabook-sldr {
+    .slick-list {
+        overflow: visible;
+    }
+}
+
+.feacoursebook-mn {
+    opacity: 0;
+    transition: opacity .1s 0s ease-in-out;
+    &.slick-current.slick-active {
+        transition: opacity .3s .2s ease-in-out;
+        opacity: 1;
+    }
+}
+
+.feacourse-book {
+    overflow: visible !important;
+    z-index: 2;
+    transition: margin-left 0.2s ease-in-out;
+    margin-bottom: cr(40px);
+
+    &.cover-anim {
+        transition: margin-left 0.6s ease-in-out;
+    }
+
+    .page {
+        background: #eaf8ff;
+    }
+
+    .page-wrapper {
+        -webkit-perspective: 2000px;
+        -moz-perspective: 2000px;
+        -ms-perspective: 2000px;
+        perspective: 2000px;
+    }
+}
+
+.feaucourse-pg {
+    width: 100%;
+    height: 100%;
+    padding: cr(22px) cr(25px) cr(22px) cr(15px);
+    border: 2px solid #a7e2ff;
+
+    h2 {
+        @include flexwidth(40%);
+
+        font-size: cr(17px);
+        color: #252525;
+        font-family: $titi;
+        font-weight: bold;
+        text-transform: uppercase;
+        padding: cr(10px) 0 0;
+        padding-right: cr(10px);
+
+        span {
+            font-size: cr(71px);
+            color: #c8ecff;
+            display: block;
+        }
+    }
+
+    p {
+        text-align: justify;
+        margin-bottom: cr(10px);
+    }
+
+    a {
+        padding: cr(1px) cr(15px) cr(3px);
+        background: #149de6;
+        line-height: cr(21px);
+        display: inline-block;
+    }
+}
+
+.feaucourse-hd {
+    @include flexbox;
+
+    margin-bottom: cr(15px);
+}
+
+.feaucourse-img {
+    @include flexwidth(60%);
+
+    img {
+        width: 100%;
+    }
+}
+
+.feacourse-btn {
+    text-align: right;
+
+    button {
+        background: none;
+        margin-right: cr(40px);
+    }
+}
+
 .industry-mn {
+    padding-left: cr(30px);
+
     p {
         font-size: cr(15px);
         color: #272727;
@@ -1781,7 +1891,7 @@ section.pgrecruters-wrp {
 .pgrecruters-mn {
     @include flexwidth(58%);
 
-    padding: cr(40px) cr(70px);
+    padding: cr(40px) cr(70px) 0;
     padding-left: calc((100% - 1170px) / 2);
     background: url(../images/recruiters-bg.jpg) no-repeat;
     background-size: cover;
@@ -1822,6 +1932,13 @@ section.pgrecruters-wrp {
                 }
             }
         }
+    }
+}
+
+.pgrecruters-student {
+    img {
+        transform: translateX(#{cr(-70px)});
+        opacity: .78;
     }
 }
 

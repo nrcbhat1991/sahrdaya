@@ -56,35 +56,35 @@
         </div>
     </div>
     <div class="hexagon-mn">
-        <a href="javascript:void(0)" class="hexagon-bx">
+        <a href="javascript:void(0)" class="hexagon-bx wy-crd" data-wy="8">
             <div class="hexagon-ico">
-                <img src="images/bannrico01.svg">
+                <img src="images/bannrico05.svg">
             </div>
-            <h4>Finance Management</h4>
+            <h4>Tourism & Hospitality Management:</h4>
         </a>
-        <a href="javascript:void(0)" class="hexagon-bx">
+        <a href="javascript:void(0)" class="hexagon-bx wy-rht" data-wy="2">
             <div class="hexagon-ico">
                 <img src="images/bannrico02.svg">
             </div>
             <h4>Human Resource Management</h4>
         </a>
-        <a href="javascript:void(0)" class="hexagon-bx">
+        <a href="javascript:void(0)" class="hexagon-bx wy-crd" data-wy>
             <div class="hexagon-ico">
-                <img src="images/bannrico03.svg">
+                <img src="images/bannrico01.svg">
             </div>
-            <h4>Marketing Management</h4>
+            <h4>Finance Management</h4>
         </a>
-        <a href="javascript:void(0)" class="hexagon-bx">
+        <a href="javascript:void(0)" class="hexagon-bx" data-wy="6">
             <div class="hexagon-ico">
                 <img src="images/bannrico04.svg">
             </div>
             <h4>International Business Management</h4>
         </a>
-        <a href="javascript:void(0)" class="hexagon-bx">
+        <a href="javascript:void(0)" class="hexagon-bx wy-lft" data-wy="4">
             <div class="hexagon-ico">
-                <img src="images/bannrico05.svg">
+                <img src="images/bannrico03.svg">
             </div>
-            <h4>Tourism & Hospitality Management:</h4>
+            <h4>Marketing Management</h4>
         </a>
     </div>
     <div class="quicklinks-mn" data-wy>
@@ -131,59 +131,6 @@
         </div>
     </div>
 </section>
-<!-- <section class="whysims-wrp">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <h3 class="mn-h3" data-wy>Why SIMS</h3>
-                <p data-wy="1">SIMS does not believe to be one among the crowd. It focuses on holistic learning and
-                    believes in the recognition of its programmes by corporate world by virtue of its content, quality,
-                    uniqueness and the superior genre of graduating students. Putting knowledge to a real-time business
-                    context - an action-based experiential learning style - is central to SIMS teaching-learning
-                    system. No matter what the endeavor is - consulting to entrepreneurship - there is an answer at
-                    SIMS. Students interested in launching their own venture can call on the vast resources of our.</p>
-                <a class="mn-btn" data-wy="2" href="javascript:void(0)">Know More <i class="fas fa-long-arrow-alt-right"></i></a>
-            </div>
-            <div class="col-md-6">
-                <h3 class="mn-h3" data-wy>FACILITIES</h3>
-                <div class="whysims-mn">
-                    <div class="whysims-bx" data-wy="1">
-                        <span><img src="images/facilty01.svg"></span>
-                        <p>Transportation</p>
-                    </div>
-                    <div class="whysims-bx" data-wy="2">
-                        <span><img src="images/facilty02.svg"></span>
-                        <p>Hostels</p>
-                    </div>
-                    <div class="whysims-bx" data-wy="3">
-                        <span><img src="images/facilty03.svg"></span>
-                        <p>ATM</p>
-                    </div>
-                    <div class="whysims-bx" data-wy="4">
-                        <span><img src="images/facilty04.svg"></span>
-                        <p>Library</p>
-                    </div>
-                    <div class="whysims-bx" data-wy="5">
-                        <span><img src="images/facilty05.svg"></span>
-                        <p>Canteen</p>
-                    </div>
-                    <div class="whysims-bx" data-wy="6">
-                        <span><img src="images/facilty06.svg"></span>
-                        <p>Study Huts</p>
-                    </div>
-                    <div class="whysims-bx" data-wy="7">
-                        <span><img src="images/facilty07.svg"></span>
-                        <p>Green Campus</p>
-                    </div>
-                    <div class="whysims-bx" data-wy="8">
-                        <span><img src="images/facilty08.svg"></span>
-                        <p>Boardroom</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section> -->
 <section class="pgcampus-wrp">
     <div class="pgcampus-cont">
         <h2 class="mn-h2" data-wy="2">Why SIMS <span></span></h2>
@@ -303,6 +250,304 @@
             <div class="col-lg-7">
                 <div class="feacourse-mn">
                     <h2 class="mn-h2" data-wy="2">Featured Courses<span></span></h2>
+                    <div class="feabook-sldr">
+                        <div class="feacoursebook-mn">
+                            <div class="feacourse-book feacoursebookinit">
+                                <div class="hard p1" depth="5" style="background: url(images/book-cover.jpg) no-repeat center; background-size: cover;">
+                                    <div class="side"></div>
+                                </div>
+                                <div class="hard p2" depth="5"> </div>
+                                <div class="p3">
+                                    <div class="feaucourse-pg">
+                                        <div class="feaucourse-hd">
+                                            <h2>Finance Management<span>01</span></h2>
+                                            <div class="feaucourse-img">
+                                                <img src="images/book01.jpg" alt="book01">
+                                            </div>
+                                        </div>
+                                        <p>Finance is the study of how individuals and firms allocate resources through
+                                            time.
+                                            At
+                                            postgraduate level, you will learn about the commercial activity of
+                                            providing
+                                            funding
+                                            and capital through the use of financial instruments in financial and
+                                            capital
+                                            markets.
+                                            This course is designed to build your</p>
+                                        <a class="knowmore-btn bg-wite wite" href="javascript:void(0)">Know More <img
+                                                src="images/rightarrow.svg" alt="rightarrow"></a>
+                                    </div>
+                                </div>
+                                <div class="p4">
+                                    <div class="feaucourse-pg">
+                                        <div class="feaucourse-hd">
+                                            <h2>Finance Management<span>02</span></h2>
+                                            <div class="feaucourse-img">
+                                                <img src="images/book02.jpg" alt="book01">
+                                            </div>
+                                        </div>
+                                        <p>Finance is the study of how individuals and firms allocate resources through
+                                            time.
+                                            At
+                                            postgraduate level, you will learn about the commercial activity of
+                                            providing
+                                            funding
+                                            and capital through the use of financial instruments in financial and
+                                            capital
+                                            markets.
+                                            This course is designed to build your</p>
+                                        <a class="knowmore-btn bg-wite wite" href="javascript:void(0)">Know More <img
+                                                src="images/rightarrow.svg" alt="rightarrow"></a>
+                                    </div>
+                                </div>
+                                <div class="p5">
+                                    <div class="feaucourse-pg">
+                                        <div class="feaucourse-hd">
+                                            <h2>Finance Management<span>03</span></h2>
+                                            <div class="feaucourse-img">
+                                                <img src="images/book01.jpg" alt="book01">
+                                            </div>
+                                        </div>
+                                        <p>Finance is the study of how individuals and firms allocate resources through
+                                            time.
+                                            At
+                                            postgraduate level, you will learn about the commercial activity of
+                                            providing
+                                            funding
+                                            and capital through the use of financial instruments in financial and
+                                            capital
+                                            markets.
+                                            This course is designed to build your</p>
+                                        <a class="knowmore-btn bg-wite wite" href="javascript:void(0)">Know More <img
+                                                src="images/rightarrow.svg" alt="rightarrow"></a>
+                                    </div>
+                                </div>
+                                <div class="p6">
+                                    <div class="feaucourse-pg">
+                                        <div class="feaucourse-hd">
+                                            <h2>Finance Management<span>04</span></h2>
+                                            <div class="feaucourse-img">
+                                                <img src="images/book02.jpg" alt="book01">
+                                            </div>
+                                        </div>
+                                        <p>Finance is the study of how individuals and firms allocate resources through
+                                            time.
+                                            At
+                                            postgraduate level, you will learn about the commercial activity of
+                                            providing
+                                            funding
+                                            and capital through the use of financial instruments in financial and
+                                            capital
+                                            markets.
+                                            This course is designed to build your</p>
+                                        <a class="knowmore-btn bg-wite wite" href="javascript:void(0)">Know More <img
+                                                src="images/rightarrow.svg" alt="rightarrow"></a>
+                                    </div>
+                                </div>
+                                <div class="p7">
+                                    <div class="feaucourse-pg">
+                                        <div class="feaucourse-hd">
+                                            <h2>Finance Management<span>05</span></h2>
+                                            <div class="feaucourse-img">
+                                                <img src="images/book01.jpg" alt="book01">
+                                            </div>
+                                        </div>
+                                        <p>Finance is the study of how individuals and firms allocate resources through
+                                            time.
+                                            At
+                                            postgraduate level, you will learn about the commercial activity of
+                                            providing
+                                            funding
+                                            and capital through the use of financial instruments in financial and
+                                            capital
+                                            markets.
+                                            This course is designed to build your</p>
+                                        <a class="knowmore-btn bg-wite wite" href="javascript:void(0)">Know More <img
+                                                src="images/rightarrow.svg" alt="rightarrow"></a>
+                                    </div>
+                                </div>
+                                <div class="p8">
+                                    <div class="feaucourse-pg">
+                                        <div class="feaucourse-hd">
+                                            <h2>Finance Management<span>06</span></h2>
+                                            <div class="feaucourse-img">
+                                                <img src="images/book02.jpg" alt="book01">
+                                            </div>
+                                        </div>
+                                        <p>Finance is the study of how individuals and firms allocate resources through
+                                            time.
+                                            At
+                                            postgraduate level, you will learn about the commercial activity of
+                                            providing
+                                            funding
+                                            and capital through the use of financial instruments in financial and
+                                            capital
+                                            markets.
+                                            This course is designed to build your</p>
+                                        <a class="knowmore-btn bg-wite wite" href="javascript:void(0)">Know More <img
+                                                src="images/rightarrow.svg" alt="rightarrow"></a>
+                                    </div>
+                                </div>
+                                <div class="p9">
+                                    <div class="feaucourse-pg">
+                                        <div class="feaucourse-hd">
+                                            <h2>Finance Management<span>07</span></h2>
+                                            <div class="feaucourse-img">
+                                                <img src="images/book01.jpg" alt="book01">
+                                            </div>
+                                        </div>
+                                        <p>Finance is the study of how individuals and firms allocate resources through
+                                            time.
+                                            At
+                                            postgraduate level, you will learn about the commercial activity of
+                                            providing
+                                            funding
+                                            and capital through the use of financial instruments in financial and
+                                            capital
+                                            markets.
+                                            This course is designed to build your</p>
+                                        <a class="knowmore-btn bg-wite wite" href="javascript:void(0)">Know More <img
+                                                src="images/rightarrow.svg" alt="rightarrow"></a>
+                                    </div>
+                                </div>
+                                <div class="p10">
+                                    <div class="feaucourse-pg">
+                                        <div class="feaucourse-hd">
+                                            <h2>Finance Management<span>08</span></h2>
+                                            <div class="feaucourse-img">
+                                                <img src="images/book01.jpg" alt="book01">
+                                            </div>
+                                        </div>
+                                        <p>Finance is the study of how individuals and firms allocate resources through
+                                            time.
+                                            At
+                                            postgraduate level, you will learn about the commercial activity of
+                                            providing
+                                            funding
+                                            and capital through the use of financial instruments in financial and
+                                            capital
+                                            markets.
+                                            This course is designed to build your</p>
+                                        <a class="knowmore-btn bg-wite wite" href="javascript:void(0)">Know More <img
+                                                src="images/rightarrow.svg" alt="rightarrow"></a>
+                                    </div>
+                                </div>
+                                <div class="hard p11" depth="5"></div>
+                                <div class="hard p12" depth="5">
+                                    <div class="side"></div>
+                                </div>
+                            </div>
+                            <div class="feacourse-btn">
+                                <button class="button turn-prev"><img src="images/arrowlarge-left.svg" alt="arrow left"></button>
+                                <button class="button turn-next"><img src="images/arrowlarge-right.svg" alt="arrow right"></button>
+                            </div>
+                        </div>
+                        <div class="feacoursebook-mn">
+                            <div class="feacourse-book feacoursebookinit2">
+                                <div class="hard p1" depth="5" style="background: url(images/book-cover.jpg) no-repeat center; background-size: cover;">
+                                    <div class="side"></div>
+                                </div>
+                                <div class="hard p2" depth="5"> </div>
+                                <div class="p3">
+                                    <div class="feaucourse-pg">
+                                        <div class="feaucourse-hd">
+                                            <h2>Finance Management<span>01</span></h2>
+                                            <div class="feaucourse-img">
+                                                <img src="images/book01.jpg" alt="book01">
+                                            </div>
+                                        </div>
+                                        <p>Finance is the study of how individuals and firms allocate resources through
+                                            time.
+                                            At
+                                            postgraduate level, you will learn about the commercial activity of
+                                            providing
+                                            funding
+                                            and capital through the use of financial instruments in financial and
+                                            capital
+                                            markets.
+                                            This course is designed to build your</p>
+                                        <a class="knowmore-btn bg-wite wite" href="javascript:void(0)">Know More <img
+                                                src="images/rightarrow.svg" alt="rightarrow"></a>
+                                    </div>
+                                </div>
+                                <div class="p4">
+                                    <div class="feaucourse-pg">
+                                        <div class="feaucourse-hd">
+                                            <h2>Finance Management<span>02</span></h2>
+                                            <div class="feaucourse-img">
+                                                <img src="images/book02.jpg" alt="book01">
+                                            </div>
+                                        </div>
+                                        <p>Finance is the study of how individuals and firms allocate resources through
+                                            time.
+                                            At
+                                            postgraduate level, you will learn about the commercial activity of
+                                            providing
+                                            funding
+                                            and capital through the use of financial instruments in financial and
+                                            capital
+                                            markets.
+                                            This course is designed to build your</p>
+                                        <a class="knowmore-btn bg-wite wite" href="javascript:void(0)">Know More <img
+                                                src="images/rightarrow.svg" alt="rightarrow"></a>
+                                    </div>
+                                </div>
+                                <div class="p5">
+                                    <div class="feaucourse-pg">
+                                        <div class="feaucourse-hd">
+                                            <h2>Finance Management<span>03</span></h2>
+                                            <div class="feaucourse-img">
+                                                <img src="images/book01.jpg" alt="book01">
+                                            </div>
+                                        </div>
+                                        <p>Finance is the study of how individuals and firms allocate resources through
+                                            time.
+                                            At
+                                            postgraduate level, you will learn about the commercial activity of
+                                            providing
+                                            funding
+                                            and capital through the use of financial instruments in financial and
+                                            capital
+                                            markets.
+                                            This course is designed to build your</p>
+                                        <a class="knowmore-btn bg-wite wite" href="javascript:void(0)">Know More <img
+                                                src="images/rightarrow.svg" alt="rightarrow"></a>
+                                    </div>
+                                </div>
+                                <div class="p6">
+                                    <div class="feaucourse-pg">
+                                        <div class="feaucourse-hd">
+                                            <h2>Finance Management<span>04</span></h2>
+                                            <div class="feaucourse-img">
+                                                <img src="images/book02.jpg" alt="book01">
+                                            </div>
+                                        </div>
+                                        <p>Finance is the study of how individuals and firms allocate resources through
+                                            time.
+                                            At
+                                            postgraduate level, you will learn about the commercial activity of
+                                            providing
+                                            funding
+                                            and capital through the use of financial instruments in financial and
+                                            capital
+                                            markets.
+                                            This course is designed to build your</p>
+                                        <a class="knowmore-btn bg-wite wite" href="javascript:void(0)">Know More <img
+                                                src="images/rightarrow.svg" alt="rightarrow"></a>
+                                    </div>
+                                </div>
+                                <div class="hard p7" depth="5"></div>
+                                <div class="hard p8" depth="5">
+                                    <div class="side"></div>
+                                </div>
+                            </div>
+                            <div class="feacourse-btn">
+                                <button class="button turn-prev"><img src="images/arrowlarge-left.svg" alt="arrow left"></button>
+                                <button class="button turn-next"><img src="images/arrowlarge-right.svg" alt="arrow right"></button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="col-lg-5">
